@@ -1,0 +1,61 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.contentMain {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.headlines {
+    margin-top: 75px;
+}
+
+.head1 {
+    margin: 0;
+}
+
+.head2 {
+    color: blue;
+}
+
+.mainSection {
+    height: 600px;
+    /* background-color: burlywood; */
+    margin-top: 20px;
+}
+
+.mainSectionHeadlines {
+    display: flex;
+}
+
+.testContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainHead1 {
+    width: 30%;
+}
+
+.mainHead2 {
+    width: 30%;
+}
+
+.mainHead3 {
+    width: 40%;
+    text-align: end;
+}
+
+.detailClass {
+    width: 40%;
+    text-align: end;
+}
+
+.firstSection {
+    width: 30%;
+}
+
+.secondSection {
+    width: 30%;
+}

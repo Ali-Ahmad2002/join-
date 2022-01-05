@@ -1,0 +1,40 @@
+.board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-with-headline {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.head-line {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.inside-container {
+    width: 25vh;
+    height: 80vh;
+    background-color: rgb(210, 210, 231);
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    min-height: 100px;
+    border: 1px solid #000000;
+    border-top: 5px solid black;
+}
+
+.drag-area-highlight {
+    background-color: rgba(253, 53, 53, 0.2);
+}

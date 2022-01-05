@@ -7,16 +7,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/board.css">
     <title>Document</title>
+    <script src="./JavaScript/board.js"></script>
 </head>
 
-<body onload="includeHTML();">
+<body onload="includeHTML(), updateHTML();">
     <div w3-include-html="navbar.html"></div>
 
-    <div class="contentMain">
-        halo
+    <div class="board">
+
+        <div class="container-with-headline">
+            <div class="head-line">
+                TO DO
+            </div>
+            <div class="inside-container" id="toDo" ondrop="moveTo('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
+
+            </div>
+        </div>
+
+        <div class="container-with-headline">
+            <div class="head-line">
+                IN PROGRESS
+            </div>
+
+
+            <div class="inside-container" id="inProgress" ondrop="moveTo('inProgress'); removeHighlight('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
+            </div>
+
+
+
+        </div>
+
+        <div class="container-with-headline">
+            <div class="head-line">
+                TESTING
+            </div>
+            <div class="inside-container" id="testing" ondrop="moveTo('testing'); removeHighlight('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
+            </div>
+        </div>
+
+        <div class="container-with-headline">
+            <div class="head-line">
+                DONE
+            </div>
+            <div class="inside-container" id="done" ondrop="moveTo('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+            </div>
+        </div>
+
+
+
+
 
     </div>
+
+
+
 
 </body>
 

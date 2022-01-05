@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    display: flex;
+}
+
+.contentMain {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
