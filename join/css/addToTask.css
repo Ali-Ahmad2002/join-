@@ -22,3 +22,11 @@
 .btns {
     margin-top: 100px;
 }
+
+.addImg {
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}

@@ -31,15 +31,12 @@
 
 
                     <div class="taskDataChild">
-                        <h3>TITLE</h3>
+                        <h3>Title</h3>
                         <input type="text" id="titleInputfield" required>
 
                         <div>
-
-
-                            <h3>DUE DATE</h3>
+                            <h3>Due Date</h3>
                             <input type="date" id="dateInputfield" required>
-
                         </div>
                     </div>
 
@@ -47,11 +44,11 @@
                     <div class="taskDataChild">
 
 
-                        <h3>CATEGORY</h3>
+                        <h3>Category</h3>
                         <select name="" id="selectCategory">
-                          <option value="Blal">Blal</option>
-                          <option value="Lala">Lala</option>
-                          <option value="zana">zana</option>
+                            <option value="Blal">Blal</option>
+                            <option value="Lala">Lala</option>
+                            <option value="zana">zana</option>
 
                         </select>
                         <!-- <input type="text" id="selectCategory" required> -->
@@ -60,8 +57,13 @@
                         <div>
 
 
-                            <h3>DESCRIPTION</h3>
-                            <input type="text" id="descriptionInputfield" required>
+                            <h3>Urgency</h3>
+                            <select name="" id="taskUrgency">
+                                <option value="lion">lion</option>
+                                <option value="middle">Middle</option>
+                                <option value="high">High</option>
+
+                            </select>
 
                         </div>
                     </div>
@@ -70,17 +72,40 @@
 
 
                         <h3>Description</h3>
-                        <textarea name="" id="selectUrgency" cols="30" rows="10" minlength="1" required></textarea>
+                        <textarea name="" id="taskDescription" cols="30" rows="10" minlength="1" required></textarea>
 
 
                         <div>
-                            <!-- hier kommt ein Img -->
+
+                            <h3>Assigned to</h3>
+                            <div id="theImages">
+
+
+                                <!-- <input id="img1" class="d-none" type="image"
+                                        src="./images/african-lion-ga78658d36_640.jpg" alt="Submit" width="48"
+                                        height="48">
+                                    <input id="img2" class="d-none" type="image" src="./images/panda-g17dbddcd4_640.jpg"
+                                        alt="Submit" width="48" height="48"> -->
+
+
+                            </div>
+                            <img class="addImg" id="addBtn" onclick="selectImg()" src="./images/plus-7-48.png">
+
                             <div class="btns">
                                 <button>Cancel</button>
 
                                 <button type="submit">create Task</button>
+
+
+
                             </div>
 
+                            <form id="taskCreator" action="">
+
+                                <input onclick="addImg(0)" id="img1" type="image" src="./images/panda-g17dbddcd4_640.jpg">
+                                <input onclick="addImg(1)" id="img2" type="image" src="./images/african-lion-ga78658d36_640.jpg">
+
+                            </form>
 
                         </div>
                     </div>

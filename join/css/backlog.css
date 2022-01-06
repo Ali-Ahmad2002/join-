@@ -40,11 +40,13 @@ body {
 
 .mainHead2 {
     width: 30%;
+    text-align: center;
 }
 
 .mainHead3 {
     width: 40%;
     text-align: end;
+    word-break: break-all;
 }
 
 .detailClass {
@@ -58,4 +60,17 @@ body {
 
 .secondSection {
     width: 30%;
+}
+
+.mainSectionHeadlinesJS {
+    padding: 10px;
+    background-color: #a9a9a978;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.centerJS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
