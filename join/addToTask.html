@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="script.js"></script>
+    <script src="./mini_backend.js"></script>
+    <script src="JavaScript/addToTask.js"></script>
+
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addToTask.css">
     <title>Document</title>
 </head>
 
-<body onload="includeHTML();">
+<body onload="includeHTML(),init();">
     <div w3-include-html="navbar.html"></div>
 
     <div class="contentMain">
@@ -22,66 +26,66 @@
 
 
 
-
             <div class="taskData">
+                <form action="" onsubmit="addTask(); return false">
 
-                <div class="taskDataChild">
-                    <form action="">
 
-                        <h3>Title</h3>
-                        <input type="text">
+                    <div class="taskDataChild">
+                        <h3>TITLE</h3>
+                        <input type="text" id="titleInputfield" required>
 
-                    </form>
-                    <div>
-                        <form action="">
+                        <div>
 
-                            <h3>Category</h3>
-                            <input type="text">
 
-                        </form>
+                            <h3>DUE DATE</h3>
+                            <input type="date" id="dateInputfield" required>
+
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="taskDataChild">
-                    <form action="">
+                    <div class="taskDataChild">
 
-                        <h3>Category</h3>
-                        <input type="text">
 
-                    </form>
+                        <h3>CATEGORY</h3>
+                        <select name="" id="selectCategory">
+                          <option value="Blal">Blal</option>
+                          <option value="Lala">Lala</option>
+                          <option value="zana">zana</option>
 
-                    <div>
-                        <form action="">
+                        </select>
+                        <!-- <input type="text" id="selectCategory" required> -->
 
-                            <h3>Category</h3>
-                            <input type="text">
 
-                        </form>
+                        <div>
+
+
+                            <h3>DESCRIPTION</h3>
+                            <input type="text" id="descriptionInputfield" required>
+
+                        </div>
                     </div>
-                </div>
 
-                <div class="taskDataChild">
-                    <form action="">
+                    <div class="taskDataChild">
+
 
                         <h3>Description</h3>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="" id="selectUrgency" cols="30" rows="10" minlength="1" required></textarea>
 
-                    </form>
 
-                    <div>
-                        <!-- hier kommt ein Img -->
-                        <div class="btns">
-                            <button>Cancel</button>
+                        <div>
+                            <!-- hier kommt ein Img -->
+                            <div class="btns">
+                                <button>Cancel</button>
 
-                            <button>create Task</button>
+                                <button type="submit">create Task</button>
+                            </div>
+
+
                         </div>
-
-
                     </div>
-                </div>
 
-
+                </form>
             </div>
 
         </div>
