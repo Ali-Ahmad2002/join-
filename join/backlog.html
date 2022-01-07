@@ -9,12 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    <script src="mini_backend.js"></script>
+    <script src="./JavaScript/backlog.js"></script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/backlog.css">
     <title>Document</title>
 </head>
 
-<body onload="includeHTML();">
+<body onload="includeHTML(), init();">
     <div w3-include-html="navbar.html"></div>
 
 
@@ -32,18 +34,7 @@
                 <h2 class="mainHead3">Details</h2>
             </div>
 
-            <div class="testContent">
-                <div class="firstSection">
-                    <span>Assigned to</span>
-                </div>
-                <div class="secondSection">
-                    <span>Category</span>
-                </div>
-                <div class="detailClass">
-                    <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, vero voluptate, blanditiis
-                        commodi cumque a, neque nam facilis pariatur harum ipsa expedita! Architecto magni odio ullam
-                        quidem hic eum cumque.</span>
-                </div>
+            <div class="mainSection" id="content">
 
             </div>
         </div>
