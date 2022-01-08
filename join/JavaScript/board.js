@@ -1,4 +1,4 @@
-//Peter
+//Peter D
 let todos = [{
     'id': 0,
     'title': 'Putzen',
@@ -8,7 +8,9 @@ let todos = [{
     'title': 'kochen',
     'category': 'inProgress'
 }];
+function xxx() {
 
+}
 let currentDraggedElement;
 
 function updateHTML() {
