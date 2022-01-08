@@ -1,4 +1,4 @@
-//Peter D
+//Peter Dz
 let todos = [{
     'id': 0,
     'title': 'Putzen',
