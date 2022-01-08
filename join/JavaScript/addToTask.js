@@ -1,7 +1,9 @@
 setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
+;
 
 let allTasks = [];
+let selectedAssignes = [];
 
 
 async function init() {
@@ -10,6 +12,19 @@ async function init() {
 
 
 }
+
+let users = [{
+        name: "Sani",
+        email: "sani.löwe@test.ch",
+        img: "./images/african-lion-ga78658d36_640.jpg"
+    },
+    {
+        name: "Ali",
+        email: "ali.panda@test.de",
+        img: "./images/panda-g17dbddcd4_640.jpg"
+    }
+
+];
 
 
 async function addTask() {
@@ -27,46 +42,26 @@ async function addTask() {
         'taskUrgency': taskUrgency,
         'taskDescription': taskDescription,
         'createdAt': new Date().getTime(),
-        'taskCreator': taskCreator
+        'taskCreator': taskCreator,
+        'assignes': selectedAssignes
     };
 
+
     allTasks.push(task);
-
-    // console.log('Hallo', taskTitle);
-    // console.log('Hallo', taskCategory);
-    // console.log('Hallo', taskDate);
-    // console.log('Hallo', taskUrgency);
-    // console.log('Hallo', taskDescription);
-    // console.log('Hallo', task);
-
-    // function changeCreatorImage() {
-    //     let creator = document.getElementById('taskCreator').value;
-    //     let creatorImg = document.getElementById('creatorImg');
-    //     if (creator == 'majd') {
-    //         creatorImg.src = 'join-/join/images/african-lion-ga78658d36_640.jpg';
-    //     }
-    //     if (creator == 'toma') {
-    //         creatorImg.src = './img/Toma.jpeg';
-    //     }
-    //     if (creator == 'peter') {
-    //         creatorImg.src = './img/Peter.jpg';
-    //     }
-    // }
-
-
-
+    console.log(allTasks)
 
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
 }
 
-function selectImg() {
-    let imgContent = document.getElementById('theImages');
-    document.getElementById('addBtn').classList.add('d-none');
-    document.getElementById('img1').classList.remove('d-none');
-    console.log('hallo')
-}
-
 function addImg(i) {
+    console.log('bild ' + i);
+
+
+    selectedAssignes.push(users[i]);
+    console.log('lala', selectedAssignes)
+    selectedAssignes.splice(i, 1);
+    console.log('bala', selectedAssignes)
+
 
 }
