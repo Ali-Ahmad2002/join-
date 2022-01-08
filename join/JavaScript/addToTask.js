@@ -9,8 +9,9 @@ let selectedAssignes = [];
 async function init() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-
-
+    selectAssignes = JSON.parse(backend.getItem('selectAssignes')) || [];
+    // deleteUser(allTasks);
+    // deleteUser(selectAssignes);
 }
 
 let users = [{
@@ -33,7 +34,7 @@ async function addTask() {
     let taskCategory = document.getElementById('selectCategory').value;
     let taskUrgency = document.getElementById('taskUrgency').value;
     let taskDescription = document.getElementById('taskDescription').value;
-    let taskCreator = document.getElementById('taskCreator');
+    // let taskCreator = document.getElementById('taskCreator');
 
     let task = {
         'taskTitle': taskTitle,
@@ -52,6 +53,9 @@ async function addTask() {
 
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
+
+    // let selectAssignesAsString = JSON.stringify(selectAssignes);
+    // await backend.setItem('selectAssignes', selectAssignesAsString);
 }
 
 function addImg(i) {
@@ -62,6 +66,5 @@ function addImg(i) {
     console.log('lala', selectedAssignes)
     selectedAssignes.splice(i, 1);
     console.log('bala', selectedAssignes)
-
 
 }
