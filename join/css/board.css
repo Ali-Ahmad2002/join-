@@ -22,10 +22,12 @@
     height: 80vh;
     background-color: rgb(210, 210, 231);
     border-radius: 10px;
+    flex: 1;
 }
 
 .card {
     display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 5px;
     border-radius: 10px;
@@ -38,3 +40,5 @@
 .drag-area-highlight {
     background-color: rgba(253, 53, 53, 0.2);
 }
+
+
