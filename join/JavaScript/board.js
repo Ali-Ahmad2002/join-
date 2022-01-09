@@ -1,20 +1,48 @@
-//Peter dddddddd
-let todos = [{
-    'id': 0,
-    'title': 'Putzen',
-    'category': 'testing'
-}, {
-    'id': 1,
-    'title': 'kochen',
-    'category': 'inProgress'
-}];
-function xxx() {
+setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
+todos = [];
+
+
+async function init() {
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    console.log(allTasks);
+    includeHTML();
+    renderTasks();
+    
+   
+   
 }
+function renderTasks() {
+
+    for (let i = 0; i < allTasks.length; i++) {
+        let theTask = allTasks[i];
+
+        let taskTitle = theTask['taskTitle'];
+        let taskCategory = theTask['taskCategory'];
+        console.log('category:', taskCategory);
+        let taskDescription = theTask['taskDescription'];
+        console.log('description:', taskDescription);
+
+        document.getElementById('toDo').innerHTML
+         += `
+        
+        <div class="card" id="card">
+        <div class="title"><b>Title: ${taskTitle}</b></div>
+        <div class="cate">Category: ${taskCategory}</div>
+        <div class="desc">Description: <i>${taskDescription}</i></div>
+        </div>
+        `;
+        todos.push(allTasks);
+        console.log();
+    }
+    
+}
+
 let currentDraggedElement;
 
 function updateHTML() {
-
+    
     let toDo = todos.filter(t => t['category'] == 'toDo');
 
     document.getElementById('toDo').innerHTML = '';
@@ -62,7 +90,7 @@ function startDragging(id) {
 }
 
 function genetateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element['id']})" class ="card">${element['title']}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element['card']})" class ="card">${element['title']}</div>`;
 }
 
 
