@@ -8,20 +8,10 @@ let selectedUser = null;
 async function init() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-    //deleteUser(allTasks);
 
-    // selectAssignes = JSON.parse(backend.getItem('selectAssignes')) || [];
-
-    // deleteUser(selectAssignes);
 }
 
-// function deleteUser(allTasks) {
-//     backend.deleteItem('allTasks');
-// }
 
-// function deleteUser(selectAssignes) {
-//     backend.deleteItem('selectAssignes');
-// }
 
 async function addTask() {
     let taskTitle = document.getElementById('titleInputfield').value;
@@ -29,8 +19,7 @@ async function addTask() {
     let taskCategory = document.getElementById('selectCategory').value;
     let taskUrgency = document.getElementById('taskUrgency').value;
     let taskDescription = document.getElementById('taskDescription').value;
-    //let taskCreator = document.getElementById('taskCreator');
-    // let taskCreator = document.getElementById('taskCreator');
+
 
     let task = {
         'taskTitle': taskTitle,
@@ -62,6 +51,8 @@ function deletAllVallus() {
     document.getElementById('selectCategory').value = '';
     document.getElementById('taskUrgency').value = '';
     document.getElementById('taskDescription').value = '';
+    document.getElementById('selectPersonImg').innerHTML = '';
+
     //allTasks = [];
 
 }
@@ -69,7 +60,7 @@ function deletAllVallus() {
 let users = [{
         'name': 'sani',
         'email': 'sani@gmail.com',
-        'img': './images/user.png',
+        'img': './images/african-lion-ga78658d36_640.jpg',
     },
 
     {
@@ -100,14 +91,12 @@ function addUsers() {
         <div  onclick="addImg(${i})" class="userCart">
         <img  src="${person.img}" alt=""> <p> ${person.name} </p> 
         <p> ${person.email} </p>
-        </div>
-        
-        
-        
+        </div>        
         `;
 
-        // <button type="button" onclick="removeUsersCard()">Back</button> html hinzufügen
+
     }
+
 
 }
 
@@ -115,63 +104,20 @@ function removeUsersCard() {
     document.getElementById('add').classList.add('d-none');
 }
 
-function addImg(i) {
-    selectedUser = users[i];
-    removeUsersCard()
+
+function selectimg() {
+    let imgSelect = document.getElementById('selectPersonImg');
+    imgSelect.innerHTML = `
+    <img  src="${selectedUser.img}" alt=""> 
+    
+  `
+    console.log(selectedUser)
 }
 
+function addImg(i) {
+    selectedUser = users[i];
+    selectimg();
+    removeUsersCard();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function selectImg() {
-//     // let imgContent = document.getElementById('theImages');
-//     document.getElementById('addBtn').classList.add('d-none');
-//     document.getElementById('img1').classList.remove('d-none');
-//     console.log('hallo')
-//         // let selectAssignesAsString = JSON.stringify(selectAssignes);
-//         // await backend.setItem('selectAssignes', selectAssignesAsString);
-// }
-
-// let user1 = [{
-//     'name': 'ali',
-//     'email': 'ali@gmail.com',
-//     'img': './images/panda-g17dbddcd4_640.jpg'
-// }];
-
-// let user2 = [{
-//     'name': 'sani',
-//     'email': 'sani@gmail.com',
-//     'img': './images/african-lion-ga78658d36_640.jpg'
-// }]
-
-// function addImg(i) {
-//     if (i == 0) {
-//         i = user1;
-//         document.getElementById('img2').classList.add('d-none');
-//         selectAssignes.push(i);
-//     } else if (i == 1) {
-//         i = user2;
-//         document.getElementById('img1').classList.add('d-none');
-//         selectAssignes.push(i);
-//     }
-//     // console.log(selectAssignes);
-//     // console.log('user tasks', allTasks);
-// }
+}
