@@ -1,6 +1,7 @@
 setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
 let allTasks = [];
+let selectedUser = null;
 
 //let selectAssignes = [];
 
@@ -31,17 +32,19 @@ async function addTask() {
     //let taskCreator = document.getElementById('taskCreator');
     // let taskCreator = document.getElementById('taskCreator');
 
-    let task = {
+    task = {
         'taskTitle': taskTitle,
         'taskDate': taskDate,
         'taskCategory': taskCategory,
         'taskUrgency': taskUrgency,
         'taskDescription': taskDescription,
         'createdDate': new Date().getTime(),
+        'user': selectedUser
 
     };
 
     allTasks.push(task);
+    selectedUser = null;
     console.log(allTasks);
     deletAllVallus();
 
@@ -59,7 +62,7 @@ function deletAllVallus() {
     document.getElementById('selectCategory').value = '';
     document.getElementById('taskUrgency').value = '';
     document.getElementById('taskDescription').value = '';
-    allTasks = [];
+    //allTasks = [];
 
 }
 
@@ -94,7 +97,7 @@ function addUsers() {
         console.log('person', person.name)
 
         creatUsers.innerHTML += ` 
-        <div  onclick="addImg${i}" class="userCart">
+        <div  onclick="addImg(${i})" class="userCart">
         <img  src="${person.img}" alt=""> <p> ${person.name} </p> 
         <p> ${person.email} </p>
         </div>
@@ -102,6 +105,7 @@ function addUsers() {
         
         
         `;
+
         // <button type="button" onclick="removeUsersCard()">Back</button> html hinzufügen
     }
 
@@ -112,9 +116,8 @@ function removeUsersCard() {
 }
 
 function addImg(i) {
-    console.log(i);
-
-
+    selectedUser = users[i];
+    removeUsersCard()
 }
 
 
