@@ -15,7 +15,7 @@ function renderTasks() {
     for (let i = 0; i < allTasks.length; i++) {
         let theTask = allTasks[i];
 
-        let taskCreator = theTask['user'].img;
+        let taskCreator = theTask['user'].img; // Ali hab ich dir gemacht Gruss Sani
         let taskCategory = theTask['taskCategory'];
         console.log('category:', taskCategory);
         let taskDescription = theTask['taskDescription'];
