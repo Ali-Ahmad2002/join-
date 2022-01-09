@@ -32,7 +32,7 @@ async function addTask() {
     //let taskCreator = document.getElementById('taskCreator');
     // let taskCreator = document.getElementById('taskCreator');
 
-    task = {
+    let task = {
         'taskTitle': taskTitle,
         'taskDate': taskDate,
         'taskCategory': taskCategory,
