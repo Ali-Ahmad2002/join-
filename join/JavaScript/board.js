@@ -5,7 +5,7 @@ todos = [];
 
 async function init() {
     await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    allTasks = JSON.parse(backend.getItem('allTasksToBoard')) || [];
     console.log(allTasks);
     includeHTML();
     renderTasks();

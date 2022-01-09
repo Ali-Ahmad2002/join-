@@ -38,9 +38,10 @@ async function addTask() {
     deletAllVallus();
 
 
-
+    alert('SUCCESS');
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
+    refreshPage();
 }
 
 
@@ -58,22 +59,22 @@ function deletAllVallus() {
 }
 
 let users = [{
-        'name': 'sani',
-        'email': 'sani@gmail.com',
-        'img': './images/african-lion-ga78658d36_640.jpg',
-    },
+    'name': 'Sani',
+    'email': 'sani@gmail.com',
+    'img': './images/african-lion-ga78658d36_640.jpg',
+},
 
-    {
-        'name': 'saiti',
-        'email': 'saiti@gmail.com',
-        'img': './images/user.png',
-    },
+{
+    'name': 'Ali',
+    'email': 'ali@gmail.com',
+    'img': './images/panda-g17dbddcd4_640.jpg',
+},
 
-    {
-        'name': 'ali',
-        'email': 'ali@gmail.com',
-        'img': './images/user.png',
-    }
+{
+    'name': 'Peter',
+    'email': 'peter@gmail.com',
+    'img': './images/bear-g0db275b07_640.jpg',
+}
 ];
 
 console.log('user', users);
@@ -99,6 +100,10 @@ function addUsers() {
 
 
 }
+
+function refreshPage(){
+    window.location.reload();
+} 
 
 function removeUsersCard() {
     document.getElementById('add').classList.add('d-none');
