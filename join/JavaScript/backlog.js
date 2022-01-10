@@ -46,6 +46,14 @@ function renderTasks() {
         </div>
         `;
     }
+    // deleteUser(allTasksToBoard);
+
+}
+
+function deletInBacklog(position) {
+    allTasks.splice(position, 1);
+
+    refreshPage();
 }
 
 async function deletTask(position) {
@@ -57,9 +65,16 @@ async function deletTask(position) {
     // init();
 }
 
-function refreshPage(){
+
+
+function deleteUser(allTasksToBoard) {
+    backend.deleteItem('allTasksToBoard');
+}
+
+
+function refreshPage() {
     window.location.reload();
-} 
+}
 
 // function deletTask(i) {
 //     console.log(i);
@@ -79,8 +94,10 @@ function goToBoard(i) {
     saveInBackEnd();
     alert('SUCCESS to Board');
     // deleteUser(allTasksToBoard);
-    deletTask();
-    refreshPage();
+    // deletInBacklog();
+    // deletTask();
+    // init();
+    // refreshPage();
 }
 
 async function saveInBackEnd() {
