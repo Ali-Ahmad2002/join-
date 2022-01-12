@@ -30,8 +30,8 @@ async function init() {
 async function renderTasks() {
 
     for (let i = 0; i < allTasksToBoard.length; i++) {
-        //theTask = allTasksToBoard[i];
-        let theTask = allTasks[i];
+        theTask = allTasksToBoard[i];
+        //let theTask = allTasks[i];
         let taskCreator = theTask['user'].img;
         let taskCreatorName = theTask['user'].name;
         let taskCreatorEmail = theTask['user'].email;
