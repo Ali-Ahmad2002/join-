@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/board.css">
     <title>Document</title>
     <script src="./mini_backend.js"></script>
-    <script src="./JavaScript/board.js"></script>
+    <script src="./JavaScript/board1.js"></script>
 </head>
 
 <body onload="includeHTML(),init(),updateHTML();">
@@ -23,7 +23,7 @@
             <div class="head-line">
                 TO DO
             </div>
-            <div class="inside-container" id="toDo" ondrop="moveTo('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
+            <div class="inside-container" id="toDo" ondrop="moveto('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event)">
 
             </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
 
 
-            <div class="inside-container" id="inProgress" ondrop="moveTo('inProgress'); removeHighlight('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
+            <div class="inside-container" id="inProgress" ondrop="moveto('inProgress'); removeHighlight('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event)">
             </div>
 
 
@@ -45,7 +45,7 @@
             <div class="head-line">
                 TESTING
             </div>
-            <div class="inside-container" id="testing" ondrop="moveTo('testing'); removeHighlight('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
+            <div class="inside-container" id="testing" ondrop="moveto('testing'); removeHighlight('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event)">
             </div>
         </div>
 
@@ -53,7 +53,7 @@
             <div class="head-line">
                 DONE
             </div>
-            <div class="inside-container" id="done" ondrop="moveTo('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+            <div class="inside-container" id="done" ondrop="moveto('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event)">
             </div>
         </div>
 
