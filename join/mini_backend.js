@@ -109,3 +109,13 @@ function determineProxySettings() {
         return 'https://cors-anywhere.herokuapp.com/';
     }
 }
+
+
+// async function saveAlltaks() {
+
+//     let allTasksAsString = JSON.stringify(allTasks);
+//     await backend.setItem('allTasks', allTasksAsString);
+
+//     console.log(allTasksAsString);
+
+// }

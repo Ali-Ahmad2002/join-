@@ -13,8 +13,8 @@
     <script src="./JavaScript/board.js"></script>
 </head>
 
-<body onload="includeHTML(), updateHTML(); init();">
-   
+<body onload="includeHTML(),init(),updateHTML();">
+
     <div w3-include-html="navbar.html"></div>
 
     <div class="board">
@@ -24,7 +24,7 @@
                 TO DO
             </div>
             <div class="inside-container" id="toDo" ondrop="moveTo('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')">
-                
+
             </div>
         </div>
 

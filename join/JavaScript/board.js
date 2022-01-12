@@ -5,14 +5,15 @@ todos = [];
 
 async function init() {
     await downloadFromServer();
-    allTasks = JSON.parse(backend.getItem('allTasksToBoard')) || [];
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
     console.log(allTasks);
-    includeHTML();
+    //includeHTML();
     renderTasks();
-    
-   
-   
+
+
+
 }
+
 function renderTasks() {
 
     for (let i = 0; i < allTasks.length; i++) {
@@ -24,8 +25,7 @@ function renderTasks() {
         let taskDescription = theTask['taskDescription'];
         console.log('description:', taskDescription);
 
-        document.getElementById('toDo').innerHTML
-         += `
+        document.getElementById('toDo').innerHTML += `
         
         <div class="card" id="card">
         <div class="title"><b>Title: ${taskTitle}</b></div>
@@ -33,24 +33,33 @@ function renderTasks() {
         <div class="desc">Description: <i>${taskDescription}</i></div>
         </div>
         `;
-        todos.push(allTasks);
-        console.log();
+
+
+
     }
-    
+
+    console.log('todos324', todos);
+    todos.push(allTasks);
 }
+
+
 
 let currentDraggedElement;
 
 function updateHTML() {
-    
+
     let toDo = todos.filter(t => t['category'] == 'toDo');
+
+
+
+
 
     document.getElementById('toDo').innerHTML = '';
 
     for (let i = 0; i < toDo.length; i++) {
         const element = toDo[i];
         document.getElementById('toDo').innerHTML += genetateTodoHTML(element);
-
+        console.log(toDo);
     }
 
     let inProgress = todos.filter(t => t['category'] == 'inProgress');
@@ -74,6 +83,7 @@ function updateHTML() {
     }
 
     let done = todos.filter(t => t['category'] == 'done');
+    console.log('done', done);
 
     document.getElementById('done').innerHTML = '';
 
@@ -85,8 +95,11 @@ function updateHTML() {
 
 }
 
+
+
 function startDragging(id) {
     currentDraggedElement = id;
+    console.log('curent', currentDraggedElement)
 }
 
 function genetateTodoHTML(element) {
@@ -100,7 +113,8 @@ function allowDrop(ev) {
 
 
 function moveTo(category) {
-    todos[currentDraggedElement]['category'] = category;
+    console.log('curent', currentDraggedElement)
+    todos['category'] = category;
     updateHTML();
 }
 

@@ -3,6 +3,7 @@ setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 let allTasks = [];
 let selectedUser = null;
 
+
 //let selectAssignes = [];
 
 async function init() {
@@ -28,7 +29,8 @@ async function addTask() {
         'taskUrgency': taskUrgency,
         'taskDescription': taskDescription,
         'createdDate': new Date().getTime(),
-        'user': selectedUser
+        'user': selectedUser,
+        'poll': 'backlog'
 
     };
 
@@ -59,22 +61,22 @@ function deletAllVallus() {
 }
 
 let users = [{
-    'name': 'Sani',
-    'email': 'sani@gmail.com',
-    'img': './images/african-lion-ga78658d36_640.jpg',
-},
+        'name': 'Sani',
+        'email': 'sani@gmail.com',
+        'img': './images/african-lion-ga78658d36_640.jpg',
+    },
 
-{
-    'name': 'Ali',
-    'email': 'ali@gmail.com',
-    'img': './images/panda-g17dbddcd4_640.jpg',
-},
+    {
+        'name': 'Ali',
+        'email': 'ali@gmail.com',
+        'img': './images/panda-g17dbddcd4_640.jpg',
+    },
 
-{
-    'name': 'Peter',
-    'email': 'peter@gmail.com',
-    'img': './images/bear-g0db275b07_640.jpg',
-}
+    {
+        'name': 'Peter',
+        'email': 'peter@gmail.com',
+        'img': './images/bear-g0db275b07_640.jpg',
+    }
 ];
 
 console.log('user', users);
@@ -101,9 +103,9 @@ function addUsers() {
 
 }
 
-function refreshPage(){
+function refreshPage() {
     window.location.reload();
-} 
+}
 
 function removeUsersCard() {
     document.getElementById('add').classList.add('d-none');

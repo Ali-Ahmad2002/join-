@@ -1,30 +1,43 @@
 setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
-allTasks = []
+allTasks = [];
 
-allTasksToBoard = []
+
+allTasksToBoard = [];
+
+
 
 
 async function init() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
-    console.log(allTasks);
+
+
+
+
+
+
+    allTasksToBoard = allTasks.filter(t => t.poll === 'backlog');
+
+
+    console.log('alltaks', allTasks)
+    console.log('alltaksboard', allTasksToBoard)
     renderTasks();
-    loadBackEnd();
+
+
 }
 
-function renderTasks() {
+async function renderTasks() {
 
-    for (let i = 0; i < allTasks.length; i++) {
+    for (let i = 0; i < allTasksToBoard.length; i++) {
+        //theTask = allTasksToBoard[i];
         let theTask = allTasks[i];
-
         let taskCreator = theTask['user'].img;
         let taskCreatorName = theTask['user'].name;
         let taskCreatorEmail = theTask['user'].email;
         let taskCategory = theTask['taskCategory'];
-        console.log('category:', taskCategory);
         let taskDescription = theTask['taskDescription'];
-        console.log('description:', taskDescription);
+
 
         let content = document.getElementById('content');
         content.innerHTML += `
@@ -45,15 +58,30 @@ function renderTasks() {
             </div>
         </div>
         `;
+
+
     }
-    // deleteUser(allTasksToBoard);
+
+    //deleteUser(allTasksToBoard);
 
 }
 
-function deletInBacklog(position) {
-    allTasks.splice(position, 1);
+async function goToBoard(i) {
+
+
+
+    allTasksToBoard[i].poll = 'board';
+
+    await saveInBackEnd();
+
+    console.log('goo board positon', allTasksToBoard)
+    console.log('', allTasksToBoard)
+    alert('SUCCESS to Board');
+
+
 
     refreshPage();
+
 }
 
 async function deletTask(position) {
@@ -61,54 +89,30 @@ async function deletTask(position) {
 
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
-    refreshPage();
-    // init();
+
 }
 
 
-
-function deleteUser(allTasksToBoard) {
-    backend.deleteItem('allTasksToBoard');
-}
 
 
 function refreshPage() {
     window.location.reload();
 }
 
-// function deletTask(i) {
-//     console.log(i);
-//     backend.deleteItem(allTasks[i]);
-//     console.log(allTasks[i]);
-// }
 
-function goToBoard(i) {
+
+function goToBoardaa(i) {
     console.log(i);
-    // allTasksToBoard.push(allTasks[i]['user']);
-    // allTasksToBoard.push(allTasks[i]['taskCategory']);
-    // allTasksToBoard.push(allTasks[i]['taskDescription']);   
 
-    allTasksToBoard.push(allTasks[i]);
-
-    // console.log(allTasksToBoard);
-    saveInBackEnd();
     alert('SUCCESS to Board');
-    // deleteUser(allTasksToBoard);
-    // deletInBacklog();
-    // deletTask();
-    // init();
-    // refreshPage();
+
 }
 
 async function saveInBackEnd() {
 
-    let allTasksToBoardAsString = JSON.stringify(allTasksToBoard);
-    await backend.setItem('allTasksToBoard', allTasksToBoardAsString);
+
+    let allTasksAsString = JSON.stringify(allTasks);
+    await backend.setItem('allTasks', allTasksAsString);
 
     console.log(allTasksToBoard);
-}
-
-async function loadBackEnd() {
-    await downloadFromServer();
-    allTasksToBoard = JSON.parse(backend.getItem('allTasksToBoard')) || [];
 }
