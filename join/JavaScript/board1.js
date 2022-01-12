@@ -123,3 +123,13 @@ async function ToTrash(position, list) {
     updateHtml(); 
 
 } 
+
+function highlight(card) {
+    document.getElementById(card).classList.add('drag-area-highlight');
+
+}
+
+function removeHighlight(card) {
+    document.getElementById(card).classList.remove('drag-area-highlight');
+
+}
