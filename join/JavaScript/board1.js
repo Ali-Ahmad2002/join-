@@ -40,7 +40,7 @@ function updateHtml() {
 
     for (let index = 0; index < inProgress.length; index++) {
         const element = inProgress[index];
-        document.getElementById('inProgress').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card">
+        document.getElementById('inProgress').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card cardInProgress">
         
         <span class="title"> ${inProgress[index].taskTitle}  </span>
         
@@ -58,7 +58,7 @@ function updateHtml() {
 
     for (let index = 0; index < testing.length; index++) {
         const element = testing[index];
-        document.getElementById('testing').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card">
+        document.getElementById('testing').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderTesting">
         
         <span class="title"> ${testing[index].taskTitle}  </span>
         
@@ -76,7 +76,7 @@ function updateHtml() {
 
     for (let index = 0; index < done.length; index++) {
         const element = done[index];
-        document.getElementById('done').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card">
+        document.getElementById('done').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderDone">
 
         <span class="title"> ${done[index].taskTitle}  </span>
       
