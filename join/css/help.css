@@ -1,0 +1,39 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+.buttonContainer {
+    margin-top: 32px;
+    background-color: #F6F8FC;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.buttonHead {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.imgHelp {
+    width: 550px;
+    height: 550px;
+    object-fit: contain;
+}
+
+.buttonJs {
+    color: white !important;
+    background-color: #102389 !important;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    padding: 16px;
+    border-radius: 12px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}

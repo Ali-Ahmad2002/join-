@@ -94,7 +94,9 @@ function addUsers() {
         <div  onclick="addImg(${i})" class="userCart">
         <img  src="${person.img}" alt=""> <p> ${person.name} </p> 
         <p> ${person.email} </p>
-        </div>        
+        </div>  
+        
+        
         `;
 
 
