@@ -88,6 +88,7 @@ body {
     font-style: italic;
 }
 
+<<<<<<< HEAD
 @media (max-width: 1000px) {
     .board {
         margin-left: unset;
@@ -100,3 +101,26 @@ body {
         height: 10em;
     }
 }
+=======
+
+@media only screen and (max-width: 1000px) {
+	.board {
+        flex-direction: column;
+    }
+
+    .container-with-headline {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .inside-container {
+        width: 25vh;
+        min-height: 300px;
+        background-color: rgb(210, 210, 231);
+        border-radius: 10px;
+      
+    }
+    
+}
+>>>>>>> bbe35439942a123ef52d71fd63c2f2ce9bf0cf0d
