@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/board.css">
-    <title>Document</title>
+    <title>Join - Task Management</title>
     <script src="./mini_backend.js"></script>
     <script src="./JavaScript/board1.js"></script>
 </head>
@@ -23,7 +26,8 @@
             <div class="head-line">
                 TO DO
             </div>
-            <div class="inside-container" id="toDo" ondrop="moveto('toDo'); removeHighlight('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event);highlight('toDo')">
+            <div class="inside-container" id="toDo" ondrop="moveto('toDo'); removeHighlight('toDo')"
+                ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event);highlight('toDo')">
 
             </div>
         </div>
@@ -34,7 +38,8 @@
             </div>
 
 
-            <div class="inside-container" id="inProgress" ondrop="moveto('inProgress'); removeHighlight('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
+            <div class="inside-container" id="inProgress" ondrop="moveto('inProgress'); removeHighlight('inProgress')"
+                ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')">
             </div>
 
 
@@ -45,7 +50,8 @@
             <div class="head-line">
                 TESTING
             </div>
-            <div class="inside-container" id="testing" ondrop="moveto('testing'); removeHighlight('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
+            <div class="inside-container" id="testing" ondrop="moveto('testing'); removeHighlight('testing')"
+                ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
             </div>
         </div>
 
@@ -53,7 +59,8 @@
             <div class="head-line">
                 DONE
             </div>
-            <div class="inside-container" id="done" ondrop="moveto('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+            <div class="inside-container" id="done" ondrop="moveto('done'); removeHighlight('done')"
+                ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
             </div>
         </div>
 

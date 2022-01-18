@@ -61,22 +61,22 @@ function deletAllVallus() {
 }
 
 let users = [{
-        'name': 'Sani',
-        'email': 'sani@gmail.com',
-        'img': './images/african-lion-ga78658d36_640.jpg',
-    },
+    'name': 'Sani',
+    'email': 'sani@gmail.com',
+    'img': './images/african-lion-ga78658d36_640.jpg',
+},
 
-    {
-        'name': 'Ali',
-        'email': 'ali@gmail.com',
-        'img': './images/panda-g17dbddcd4_640.jpg',
-    },
+{
+    'name': 'Ali',
+    'email': 'ali@gmail.com',
+    'img': './images/panda-g17dbddcd4_640.jpg',
+},
 
-    {
-        'name': 'Peter',
-        'email': 'peter@gmail.com',
-        'img': './images/bear-g0db275b07_640.jpg',
-    }
+{
+    'name': 'Peter',
+    'email': 'peter@gmail.com',
+    'img': './images/bear-g0db275b07_640.jpg',
+}
 ];
 
 console.log('user', users);
@@ -92,11 +92,9 @@ function addUsers() {
 
         creatUsers.innerHTML += ` 
         <div  onclick="addImg(${i})" class="userCart">
-        <img  src="${person.img}" alt=""> <p> ${person.name} </p> 
-        <p> ${person.email} </p>
-        </div>  
-        
-        
+        <img  src="${person.img}" alt=""> <p class="nameStyle"> ${person.name} </p> 
+        <p class="emailStyle"> ${person.email} </p>
+        </div>        
         `;
 
 
@@ -117,9 +115,10 @@ function removeUsersCard() {
 function selectimg() {
     let imgSelect = document.getElementById('selectPersonImg');
     imgSelect.innerHTML = `
-    <img  src="${selectedUser.img}" alt=""> 
-    
-  `
+    <div class="userImgContainer">
+    <img class="userImg" src="${selectedUser.img}" alt=""> 
+    </div>
+    `
     console.log(selectedUser)
 }
 

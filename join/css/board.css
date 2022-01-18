@@ -1,7 +1,14 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
 .board {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .container-with-headline {
@@ -10,6 +17,7 @@
     flex-direction: column;
     align-items: center;
     margin: 20px;
+    margin-top: 0;
 }
 
 .head-line {
@@ -22,7 +30,9 @@
     height: 80vh;
     background-color: rgb(210, 210, 231);
     border-radius: 10px;
-    flex: 1;
+    /* flex: 1; */
+    overflow: auto;
+    box-shadow: 0 0 10px 0;
 }
 
 .card {
@@ -36,6 +46,8 @@
     border: 1px solid #000000;
     border-top: 5px solid black;
     cursor: pointer;
+    position: relative;
+    word-break: break-all;
 }
 
 .cardInProgress {
@@ -57,6 +69,15 @@
 .delete {
     height: 30px;
     width: 30px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 5px;
+    transition: transform 75ms ease-in-out;
+}
+
+.delete:hover {
+    transform: scale(1.10);
 }
 
 .title {
@@ -65,4 +86,17 @@
 
 .description {
     font-style: italic;
+}
+
+@media (max-width: 1000px) {
+    .board {
+        margin-left: unset;
+        margin-right: unset;
+        margin-top: 10em;
+        display: flex;
+        flex-direction: column;
+    }
+    .container-with-headline {
+        height: 10em;
+    }
 }

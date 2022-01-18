@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 
     <script src="script.js"></script>
     <script src="./mini_backend.js"></script>
@@ -12,7 +15,7 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/addToTask.css">
-    <title>Document</title>
+    <title>Join - Task Management</title>
 </head>
 
 <body onload="includeHTML(),init()">
@@ -22,8 +25,9 @@
 
         <div class="contentChild">
 
-            <div class="" style="margin-left: 10%;">
-                <h1>Add Task</h1>
+            <div class="addTaskHead">
+                <h1 style="margin-bottom: 0px;">Add Task</h1>
+                <span class="head2">Learning Managment System Project</span>
             </div>
 
 
@@ -35,7 +39,7 @@
                     <div class="taskDataParents">
                         <div class="taskDataChild">
                             <h3>Title</h3>
-                            <input class="input" type="text" id="titleInputfield" required>
+                            <input placeholder="Title" class="input" type="text" id="titleInputfield" required>
                         </div>
 
                         <div class="taskDataChild">
@@ -48,11 +52,11 @@
                         <div class="taskDataChild">
                             <h3>Category</h3>
                             <select class="input inputselect" name="" id="selectCategory">
-                            <option value="Blal">Blal</option>
-                            <option value="Lala">Lala</option>
-                            <option value="zana">zana</option>
+                                <option value="Category 1">Category 1</option>
+                                <option value="Category 2">Category 2</option>
+                                <option value="Category 3">Category 3</option>
 
-                        </select>
+                            </select>
                         </div>
                         <!-- <input type="text" id="selectCategory" required> -->
 
@@ -60,7 +64,7 @@
                         <div class="taskDataChild">
                             <h3>Urgency</h3>
                             <select class="input inputselect" name="" id="taskUrgency">
-                                <option value="lion">lion</option>
+                                <option value="lion">Low</option>
                                 <option value="middle">Middle</option>
                                 <option value="high">High</option>
 
@@ -68,14 +72,16 @@
                         </div>
                     </div>
 
-                  
+
 
                     <div class="taskDataParents">
                         <div class="taskDataChild">
                             <h3>Description</h3>
-                            <textarea style=" resize: none;" class="textArea" name="" id="taskDescription" cols="30" rows="10" minlength="1" required></textarea>
+                            <textarea placeholder="Description" style=" resize: none;" class="textArea" name=""
+                                id="taskDescription" cols="30" rows="10" minlength="1" required></textarea>
                         </div>
-                        <div id="selectPersonImg" class="taskDataChild userImg" style="display:flex; justify-content: center;">
+                        <div id="selectPersonImg" class="taskDataChild userImg"
+                            style="display:flex; justify-content: center;">
 
                         </div>
                         <div class="taskDataChild">
@@ -88,11 +94,11 @@
 
                             </div>
 
-                            <button type="button" onclick="addUsers()">Add</button>
+                            <button type="button" class="addBtn" onclick="addUsers()">Add</button>
                             <div class="btns">
-                                <button type="button" onclick="deletAllVallus()">Cancel</button>
+                                <button type="button" class="addBtn" onclick="deletAllVallus()">Cancel</button>
 
-                                <button type="submit">create Task</button>
+                                <button class="addBtn" type="submit">create Task</button>
                             </div>
                         </div>
                     </div>

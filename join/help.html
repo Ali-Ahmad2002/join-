@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/backlog.css">
     <link rel="stylesheet" href="./css/help.css">
-    <title>Document</title>
+    <title>Join - Task Management</title>
 </head>
 
 <body onload="includeHTML();">
@@ -25,10 +25,10 @@
 
         <div class="buttonContainer">
             <div class="buttonHead">
-                <button class="button  buttonJs" onclick="help()">First Steps</button>
-                <button class="button" id="helpButton" onclick="addhelp()">1.Add Tasks</button>
-                <button class="button" onclick="backloghelp()">2.backlog</button>
-                <button class="button" onclick="boardhelp()">3.Board</button>
+                <button id="firstStep" class="button" onclick="help()">First Steps</button>
+                <button id="addTask" class="button" id="helpButton" onclick="addhelp()">1.Add Tasks</button>
+                <button id="backlog" class="button" onclick="backloghelp()">2.backlog</button>
+                <button id="board" class="button" onclick="boardhelp()">3.Board</button>
             </div>
             <div id="help">
 

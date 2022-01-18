@@ -1,5 +1,38 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+}
+
+.addTaskHead {
+    margin-left: 12%;
+    margin-bottom: 15px;
+    margin-top: 55px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
 .headline {
     height: fit-content;
+}
+
+.head2 {
+    color: blue;
+}
+
+.userImgContainer {
+    height: 100px;
+    width: 150px;
+    position: absolute;
+    bottom: 205px;
+    right: 465px;
+}
+
+.userImg {
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
 }
 
 .contentChild {
@@ -7,17 +40,21 @@
 }
 
 .taskData {
-    height: 76vh;
-    margin-left: 10%;
+    height: 70vh;
+    margin-left: 12%;
     background-color: #EBEDFC;
     padding: 20px;
-    margin-right: 10%;
+    margin-right: 12%;
+    border-radius: 15px;
+    padding-left: 100px;
+    padding-right: 100px;
+    box-shadow: 0 0px 8px 0;
 }
 
 .taskDataParents {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .taskDataChild {
@@ -29,6 +66,7 @@
     max-width: 150%;
     max-height: 100%;
     padding: 13px;
+    border-radius: 5px;
 }
 
 .inputselect {
@@ -38,10 +76,14 @@
 .textArea {
     width: 176px;
     height: 74px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .btns {
     margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .addImg {
@@ -55,18 +97,22 @@
 .users {
     background-color: white;
     position: absolute;
-    top: 80px;
-    left: 270px;
+    top: 123px;
+    left: 310px;
     right: 0px;
     max-width: 70%;
     height: 80vh;
     border: 1px solid black;
     box-shadow: inset 0 0 1em blue, 0 0 1em black;
+    z-index: 100;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start; */
 }
 
 .users img {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
     padding: 20px;
 }
@@ -75,7 +121,8 @@
     display: flex;
     font-size: 35px;
     cursor: pointer;
-    justify-content: space-around;
+    width: 100%;
+    align-items: center;
 }
 
 .userCart:hover {
@@ -83,7 +130,130 @@
 }
 
 .userImg {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 100px;
     object-fit: cover;
+}
+
+.addBtn {
+    border: 0;
+    padding: 5px;
+    background-color: #6098ff;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 75ms ease-in-out;
+    border: 1px solid #00000052;
+    padding: 10px;
+}
+
+.addBtn:hover {
+    /* transform: scale(1.05); */
+    background-color: #347afa;
+}
+
+.nameStyle {
+    padding-left: 25px;
+}
+
+.emailStyle {
+    padding-left: 50px;
+}
+
+@media (max-width: 1000px) {
+    .addTaskHead {
+        margin-left: unset;
+        margin-top: 7em;
+        text-align: center;
+        margin-bottom: 3em;
+    }
+
+    .taskData {
+        height: unset;
+        margin-left: unset;
+        padding: unset;
+        margin-right: unset;
+        padding-left: unset;
+        padding-right: unset;
+        width: 100%;
+    }
+
+    .taskDataParents {
+        padding: unset;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h3 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .input {
+        max-width: unset;
+        max-height: unset;
+        padding: 1em;
+    }
+
+    .inputselect {
+        width: unset;
+    }
+
+    .textArea {
+        width: unset;
+        height: 10em;
+    }
+
+    .addBtn {
+        margin-left: 4em;
+        margin-right: 4em;
+        padding: 1em;
+    }
+
+    body {
+        overflow: unset;
+    }
+
+    .users {
+        top: 30em;
+        left: unset;
+        right: unset;
+        max-width: unset;
+        height: unset;
+        width: 100%;
+    }
+
+    .emailStyle {
+        display: none;
+    }
+
+    .userImg {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .userImgContainer {
+        height: unset;
+        width: unset;
+        position: unset;
+        margin-top: 1em;
+        width: 100%;
+    }
+
+    .userImg {
+        height: unset;
+        width: unset;
+        margin-left: unset;
+        margin-right: unset;
+        margin-top: 1em;
+        width: 70%;
+        height: 7em;
+        margin-left: 15%;
+    }
+
+    .btns {
+        margin-top: 2em;
+        text-align: center;
+    }
 }

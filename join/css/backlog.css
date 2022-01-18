@@ -1,10 +1,13 @@
 body {
     font-family: 'Raleway', sans-serif;
+    overflow: hidden;
 }
 
 .contentMain {
     padding-left: 25px;
     padding-right: 25px;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
 .headlines {
@@ -19,14 +22,22 @@ body {
     color: blue;
 }
 
-.mainSection {
+.mainSection1 {
     height: 600px;
-    /* background-color: burlywood; */
     margin-top: 20px;
+}
+
+.mainSection {
+
+    height: 512px;
+    /* margin-top: 20px; */
+    overflow: auto;
 }
 
 .mainSectionHeadlines {
     display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .testContent {
@@ -71,6 +82,19 @@ body {
     background-color: #a9a9a978;
     margin-top: 15px;
     border-radius: 10px;
+    box-shadow: 0 0 7px 0;
+}
+
+.leftBorderPeter {
+    border-left: 15px solid red;
+}
+
+.leftBorderAli {
+    border-left: 15px solid green;
+}
+
+.leftBorderSani {
+    border-left: 15px solid blue;
 }
 
 .centerJS {
@@ -83,6 +107,7 @@ body {
     width: 8pc;
     height: 8pc;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .nameMailContainer {
@@ -95,5 +120,90 @@ body {
 .btnStyle {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.addBtn {
+    border: 0;
+    padding: 5px;
+    background-color: #6098ff;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 75ms ease-in-out;
+    border: 1px solid #00000052;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.addBtn:hover {
+    transform: scale(1.05);
+    background-color: #347afa;
+}
+
+@media (max-width: 1000px) {
+    .contentMain {
+        padding-left: unset;
+        padding-right: unset;
+        margin-right: unset;
+        margin-left: unset;
+    }
+
+    .headlines {
+        margin-top: 6.5em;
+        text-align: center;
+    }
+
+    .mainHead1 {
+        font-size: 1.2em;
+        height: fit-content;
+    }
+
+    .mainHead1Img {
+        width: 5em;
+        height: 4em;
+    }
+
+    .centerJS {
+        position: absolute;
+        bottom: 2.5em;
+        left: 0;
+        font-weight: 600;
+    }
+
+    .mainHead3 {
+        width: 53%;
+        font-size: 1em;
+        padding-right: 1em;
+    }
+
+    .nameMailContainer {
+        display: none;
+    }
+
+    .mainSectionHeadlinesJS {
+        height: 10em;
+        position: relative;
+    }
+
+    .h2Responsive {
+        display: none;
+    }
+
+    .descriptionClass {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .btnStyle {
+        justify-content: space-between;
+    }
+
+    .addBtn {
+        background-color: #6098ff;
+        padding: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
 }

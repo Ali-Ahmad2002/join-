@@ -12,19 +12,12 @@ async function init() {
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
 
-
-
-
-
-
     allTasksToBoard = allTasks.filter(t => t.poll === 'backlog');
 
 
     console.log('alltaks', allTasks)
     console.log('alltaksboard', allTasksToBoard)
     renderTasks();
-
-
 }
 
 async function renderTasks() {
@@ -38,27 +31,43 @@ async function renderTasks() {
         let taskCategory = theTask['taskCategory'];
         let taskDescription = theTask['taskDescription'];
 
+        let color = 'black';
+
+        if (taskCreatorName == 'Peter') {
+            color = '#951515';
+        } else if (taskCreatorName == 'Ali') {
+            color = '#227210';
+        } else if (taskCreatorName == 'Sani') {
+            color = '#2d58d9';
+        }
 
         let content = document.getElementById('content');
         content.innerHTML += `
         
-        <div id="taskContainer" class="mainSectionHeadlines mainSectionHeadlinesJS">
+        <div id="taskContainer" class="mainSectionHeadlines mainSectionHeadlinesJS" style="border-left: 10px solid ${color};">
             <div class="mainHead1">
                 <img class="mainHead1Img" src="${taskCreator}">
                 <div class="nameMailContainer">
                     <span>${taskCreatorName}</span>
                     <span>${taskCreatorEmail}</span>
                 </div>
-            </div>
+            </div> 
              <span class="mainHead2 centerJS">${taskCategory}</span>
-             <span class="mainHead3">${taskDescription}</span>
+             <span class="mainHead3 descriptionClass">${taskDescription}</span>
              <div class="btnStyle">
-                <button onclick="goToBoard(${i})">Go</button>
-                <button onclick="deletTask(${i})">Delet</button>
+                <button class="addBtn" onclick="goToBoard(${i})">Go</button>
+                <button class="addBtn" onclick="deletTask(${i})">Delet</button>
             </div>
         </div>
         `;
 
+        // if (taskCreatorName == 'Peter') {
+        //     document.getElementById('taskContainer').classList.add('leftBorderPeter');
+        // } else if (taskCreatorName == 'Ali') {
+        //     document.getElementById('taskContainer').classList.add('leftBorderAli');
+        // } else if(taskCreatorName=='Sani') {
+        //     document.getElementById('taskContainer').classList.add('leftBorderSani');
+        // }
 
     }
 
@@ -90,16 +99,12 @@ async function deletTask(position) {
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
 
+    refreshPage();
 }
-
-
-
 
 function refreshPage() {
     window.location.reload();
 }
-
-
 
 function goToBoardaa(i) {
     console.log(i);

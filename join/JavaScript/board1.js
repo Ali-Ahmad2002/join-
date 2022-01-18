@@ -1,21 +1,24 @@
 setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
 let todos = [];
-
+let board;
 let currentDraggedElement;
+let todoFilter = [];
 
 
 async function init() {
     await downloadFromServer();
     todos = JSON.parse(backend.getItem('allTasks')) || [];
-
+    // console.log('poll', todos[0].poll);
+    let filteredTodos = todos.filter(t => t.poll === 'board');
+    console.log('filter', filteredTodos);
+    todoFilter.push(filteredTodos);
     includeHTML();
     updateHtml();
 
 }
 
 function updateHtml() {
-
     let todo = todos.filter(t => !t['list'] || t['list'] == 'toDo'); //!!
 
     document.getElementById('toDo').innerHTML = '';
@@ -120,9 +123,9 @@ async function ToTrash(position, list) {
     let allTasksAsString = JSON.stringify(todos);
     await backend.setItem('allTasks', allTasksAsString);
 
-    updateHtml(); 
+    updateHtml();
 
-} 
+}
 
 function highlight(card) {
     document.getElementById(card).classList.add('drag-area-highlight');
