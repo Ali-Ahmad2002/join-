@@ -86,6 +86,8 @@ function addUsers() {
     document.getElementById('add').classList.remove('d-none');
     let creatUsers = document.getElementById('add');
 
+    creatUsers.innerHTML = '';
+
     for (let i = 0; i < users.length; i++) {
         let person = users[i]
         console.log('person', person.name)

@@ -10,16 +10,14 @@ async function init() {
     await downloadFromServer();
     todos = JSON.parse(backend.getItem('allTasks')) || [];
     // console.log('poll', todos[0].poll);
-    let filteredTodos = todos.filter(t => t.poll === 'board');
-    console.log('filter', filteredTodos);
-    todoFilter.push(filteredTodos);
+    todoFilter = todos.filter(t => t.poll === 'board');
     includeHTML();
     updateHtml();
 
 }
 
 function updateHtml() {
-    let todo = todos.filter(t => !t['list'] || t['list'] == 'toDo'); //!!
+    let todo = todoFilter.filter(t => !t['list'] || t['list'] == 'toDo'); //!!
 
     document.getElementById('toDo').innerHTML = '';
 
@@ -37,7 +35,7 @@ function updateHtml() {
     }
 
 
-    let inProgress = todos.filter(t => t['list'] == 'inProgress');
+    let inProgress = todoFilter.filter(t => t['list'] == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = '';
 
@@ -55,7 +53,7 @@ function updateHtml() {
     }
 
 
-    let testing = todos.filter(t => t['list'] == 'testing');
+    let testing = todoFilter.filter(t => t['list'] == 'testing');
 
     document.getElementById('testing').innerHTML = '';
 
@@ -73,7 +71,7 @@ function updateHtml() {
     }
 
 
-    let done = todos.filter(t => t['list'] == 'done');
+    let done = todoFilter.filter(t => t['list'] == 'done');
 
     document.getElementById('done').innerHTML = '';
 
@@ -107,7 +105,7 @@ function allowDrop(ev) { //!!!
 }
 
 async function moveto(list) {
-    const task = todos.find(t => t.createdDate === currentDraggedElement);
+    const task = todoFilter.find(t => t.createdDate === currentDraggedElement);
     task.list = list;
     await backend.setItem('allTasks', JSON.stringify(todos));
     updateHtml();
@@ -115,7 +113,7 @@ async function moveto(list) {
 }
 
 async function ToTrash(position, list) {
-    let toDolist = todos.filter(t => t['list'] === list);
+    let toDolist = todoFilter.filter(t => t['list'] === list);
 
     let toDelete = toDolist[position];
     let posToDelete = todos.indexOf(toDelete);
@@ -124,7 +122,11 @@ async function ToTrash(position, list) {
     await backend.setItem('allTasks', allTasksAsString);
 
     updateHtml();
+    refreshPage();
+}
 
+function refreshPage() {
+    window.location.reload();
 }
 
 function highlight(card) {
