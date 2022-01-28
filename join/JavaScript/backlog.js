@@ -44,7 +44,7 @@ async function renderTasks() {
         let content = document.getElementById('content');
         content.innerHTML += `
         
-        <div id="taskContainer" class="mainSectionHeadlines mainSectionHeadlinesJS" style="border-left: 10px solid ${color};">
+        <div id="taskContainer" onclick="openDetails(${i})" class="mainSectionHeadlines mainSectionHeadlinesJS" style="border-left: 10px solid ${color};">
             <div class="mainHead1">
                 <img class="mainHead1Img" src="${taskCreator}">
                 <div class="nameMailContainer">
@@ -75,9 +75,47 @@ async function renderTasks() {
 
 }
 
+function openDetails(index) {
+
+    let theTask = allTasksToBoard[index];
+
+    let detailContainer = document.getElementById('detailMain');
+    detailContainer.classList.remove('d-none');
+    detailContainer.classList.add('detailContainer');
+
+
+    let taskCreatorName = theTask['user'].name;
+    let taskCreatorEmail = theTask['user'].email;
+    let taskCategory = theTask['taskCategory'];
+    let taskDescription = theTask['taskDescription'];
+    let taskDate = theTask['taskDate'];
+    let taskUrgency = theTask['taskUrgency'];
+
+    let content = document.getElementById('detail');
+    content.innerHTML = '';
+
+    content.innerHTML += `
+            <div class="mainDetailContent">
+                <div class="detailContentStats"> name:<h2 class="padding">${taskCreatorName}</h2> </div>
+                <div class="detailContentStats">E-mail: <p class="padding">${taskCreatorEmail}</p></div> 
+                <div class="detailContentStats">Category: <p class="padding">${taskCategory}</p></div> 
+                <div class="detailContentStats">Date: <p class="padding">${taskDate}</p></div> 
+                <div class="detailContentStats">Description: <p class="padding">${taskDescription}</p></div> 
+                <div class="detailContentStats">Urgency: <p class="padding">${taskUrgency}</p></div> 
+                <img onclick="closeDetails()" class="closeBtnDetail" src="./images/close-window-32.png">
+            </div>
+        `;
+
+}
+
+function closeDetails() {
+    let detailContainer = document.getElementById('detailMain');
+    detailContainer.classList.add('d-none');
+    detailContainer.classList.remove('detailContainer');
+}
+
+
 async function goToBoard(i) {
-
-
 
     allTasksToBoard[i].poll = 'board';
 
