@@ -8,111 +8,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/addToTask.css">
     <script src="script.js"></script>
     <script src="./mini_backend.js"></script>
     <script src="JavaScript/addToTask.js"></script>
-
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/addToTask.css">
     <title>Join - Task Management</title>
 </head>
 
 <body onload="includeHTML(),init()">
     <div w3-include-html="navbar.html"></div>
-
-    <div class="contentMain">
-
-        <div class="contentChild">
-
+    <div class="contentChild">
+        <div class="taskData">
             <div class="addTaskHead">
                 <h1 style="margin-bottom: 0px;">Add Task</h1>
                 <span class="head2">Learning Managment System Project</span>
             </div>
-
-
-            <div class="taskData">
-
-                <form action="" onsubmit="addTask(); return false">
-
-
-                    <div class="taskDataParents">
-                        <div class="taskDataChild">
-                            <h3>Title</h3>
-                            <input placeholder="Title" class="input" type="text" id="titleInputfield" required>
-                        </div>
-
-                        <div class="taskDataChild">
-                            <h3>Due Date</h3>
-                            <input class="input" type="date" id="dateInputfield" required>
-                        </div>
+            <form action="" onsubmit="addTask(); return false">
+                <div class="taskDataParents">
+                    <div class="taskDataChild">
+                        <h3>Title</h3>
+                        <input placeholder="Title" class="input" type="text" id="titleInputfield" required>
                     </div>
-
-                    <div class="taskDataParents">
-                        <div class="taskDataChild">
-                            <h3>Category</h3>
-                            <select class="input inputselect" name="" id="selectCategory">
-                                <option value="Category 1">Category 1</option>
-                                <option value="Category 2">Category 2</option>
-                                <option value="Category 3">Category 3</option>
-
+                    <div class="taskDataChild">
+                        <h3>Due Date</h3>
+                        <input class="input" type="date" id="dateInputfield" required>
+                    </div>
+                </div>
+                <div class="taskDataParents">
+                    <div class="taskDataChild">
+                        <h3>Category</h3>
+                        <select class="inputselect" name="" id="selectCategory">
+                                <option  value="Category 1">Marketing</option>
+                                <option  value="Category 2">IT</option>
+                                <option  value="Category 3">Organisation</option>
                             </select>
-                        </div>
-                        <!-- <input type="text" id="selectCategory" required> -->
-
-
-                        <div class="taskDataChild">
-                            <h3>Urgency</h3>
-                            <select class="input inputselect" name="" id="taskUrgency">
+                    </div>
+                    <div class="taskDataChild">
+                        <h3>Urgency</h3>
+                        <select class="input inputselect" name="" id="taskUrgency">
                                 <option value="lion">Low</option>
                                 <option value="middle">Middle</option>
                                 <option value="high">High</option>
-
                             </select>
+                    </div>
+                </div>
+                <div class="taskDataParents">
+                    <div class="taskDataChild">
+                        <h3>Description</h3>
+                        <textarea placeholder="Description" style=" resize: none;" class="textArea" name="" id="taskDescription" cols="30" rows="10" minlength="1" required></textarea>
+                    </div>
+                    <div id="selectPersonImg" class="taskDataChild">
+                    </div>
+                    <div class="taskDataChild">
+                        <h3>Assigned to</h3>
+                        <div id="add" class="users d-none">
+                        </div>
+                        <button type="button" class="addBtn" onclick="addUsers()">Add</button>
+                        <div class="btns">
+                            <button type="button" class="addBtn" onclick="deletAllVallus()">Cancel</button>
+                            <button class="addBtn" type="submit">create Task</button>
                         </div>
                     </div>
-
-
-
-                    <div class="taskDataParents">
-                        <div class="taskDataChild">
-                            <h3>Description</h3>
-                            <textarea placeholder="Description" style=" resize: none;" class="textArea" name=""
-                                id="taskDescription" cols="30" rows="10" minlength="1" required></textarea>
-                        </div>
-                        <div id="selectPersonImg" class="taskDataChild userImg"
-                            style="display:flex; justify-content: center;">
-
-                        </div>
-                        <div class="taskDataChild">
-                            <h3>Assigned to</h3>
-                            <div>
-                                <div id="add" class="users d-none">
-
-
-                                </div>
-
-                            </div>
-
-                            <button type="button" class="addBtn" onclick="addUsers()">Add</button>
-                            <div class="btns">
-                                <button type="button" class="addBtn" onclick="deletAllVallus()">Cancel</button>
-
-                                <button class="addBtn" type="submit">create Task</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-
-
-
-            </div>
-
+                </div>
+            </form>
         </div>
-
     </div>
-
 </body>
 
 </html>

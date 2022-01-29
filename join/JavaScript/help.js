@@ -1,10 +1,9 @@
-
 function help() {
-  let helpTasks = document.getElementById('help');
+    let helpTasks = document.getElementById('help');
 
-  helpTasks.innerHTML = "";
+    // helpTasks.innerHTML = "";
 
-  helpTasks.innerHTML = `
+    helpTasks.innerHTML = `
     <span><h2>First Steps</h2>
       <p class="firstTextStyle">
         Welcome to the join page of: Sani Saiti, Ali and Pitor. <br>
@@ -12,14 +11,14 @@ function help() {
       </p>
     </span>  
   `
-  changeColorOne();
+    changeColorOne();
 }
 
 function changeColorOne() {
-  document.getElementById('firstStep').classList.add('buttonJs');
-  document.getElementById('addTask').classList.remove('buttonJs');
-  document.getElementById('backlog').classList.remove('buttonJs');
-  document.getElementById('board').classList.remove('buttonJs');
+    document.getElementById('firstStep').classList.add('buttonJs');
+    document.getElementById('addTask').classList.remove('buttonJs');
+    document.getElementById('backlog').classList.remove('buttonJs');
+    document.getElementById('board').classList.remove('buttonJs');
 }
 
 
@@ -27,14 +26,14 @@ function changeColorOne() {
 
 function addhelp() {
 
-  let helpTasks = document.getElementById('help');
+    let helpTasks = document.getElementById('help');
 
-  // let toglge = document.getElementById('helpButton');
-  // toglge.classList.toggle("buttonJs");
+    // let toglge = document.getElementById('helpButton');
+    // toglge.classList.toggle("buttonJs");
 
-  helpTasks.innerHTML = "";
+    helpTasks.innerHTML = "";
 
-  helpTasks.innerHTML = `
+    helpTasks.innerHTML = `
     <h2 class="headlineStyle">1. Add Task</h2>    
     <img class="imgHelp" src="images/Screenshot addToTasks .png" alt="">
     <p class="textStyle"> 
@@ -45,23 +44,23 @@ function addhelp() {
    
   
   `
-  addTaskColor();
+    addTaskColor();
 }
 
 function addTaskColor() {
-  document.getElementById('firstStep').classList.remove('buttonJs');
-  document.getElementById('addTask').classList.add('buttonJs');
-  document.getElementById('backlog').classList.remove('buttonJs');
-  document.getElementById('board').classList.remove('buttonJs');
+    document.getElementById('firstStep').classList.remove('buttonJs');
+    document.getElementById('addTask').classList.add('buttonJs');
+    document.getElementById('backlog').classList.remove('buttonJs');
+    document.getElementById('board').classList.remove('buttonJs');
 }
 
 
 function backloghelp() {
-  let helpTasks = document.getElementById('help');
+    let helpTasks = document.getElementById('help');
 
-  helpTasks.innerHTML = "";
+    helpTasks.innerHTML = "";
 
-  helpTasks.innerHTML = `
+    helpTasks.innerHTML = `
     <span><h2 class="headlineStyle">2. Backlog</h2>
         <img class="imgHelp"  src="images/Screenshot backlog.png" alt="">
     <p class="textStyle"> 
@@ -72,23 +71,23 @@ function backloghelp() {
     </span>  
   `
 
-  backlogColor();
+    backlogColor();
 }
 
 function backlogColor() {
-  document.getElementById('firstStep').classList.remove('buttonJs');
-  document.getElementById('addTask').classList.remove('buttonJs');
-  document.getElementById('backlog').classList.add('buttonJs');
-  document.getElementById('board').classList.remove('buttonJs');
+    document.getElementById('firstStep').classList.remove('buttonJs');
+    document.getElementById('addTask').classList.remove('buttonJs');
+    document.getElementById('backlog').classList.add('buttonJs');
+    document.getElementById('board').classList.remove('buttonJs');
 }
 
 
 function boardhelp() {
-  let helpTasks = document.getElementById('help');
+    let helpTasks = document.getElementById('help');
 
-  helpTasks.innerHTML = "";
+    helpTasks.innerHTML = "";
 
-  helpTasks.innerHTML = `
+    helpTasks.innerHTML = `
     <span><h2 class="headlineStyle">3. Board</h2>
     <img class="imgHelpBoard" src="images/Screenshot board.png" alt="">
     <p class="textStyle"> 
@@ -109,12 +108,12 @@ function boardhelp() {
     </span>  
   `
 
-  boardColor();
+    boardColor();
 }
 
 function boardColor() {
-  document.getElementById('firstStep').classList.remove('buttonJs');
-  document.getElementById('addTask').classList.remove('buttonJs');
-  document.getElementById('backlog').classList.remove('buttonJs');
-  document.getElementById('board').classList.add('buttonJs');
+    document.getElementById('firstStep').classList.remove('buttonJs');
+    document.getElementById('addTask').classList.remove('buttonJs');
+    document.getElementById('backlog').classList.remove('buttonJs');
+    document.getElementById('board').classList.add('buttonJs');
 }

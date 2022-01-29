@@ -3,8 +3,8 @@ body {
     display: flex;
 }
 
-.contentMain {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+.contentChild {
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
 }

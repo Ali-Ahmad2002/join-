@@ -1,10 +1,12 @@
 setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
+
+/**
+ * Arry to save the values of add Task
+ */
+
 let allTasks = [];
 let selectedUser = null;
-
-
-//let selectAssignes = [];
 
 async function init() {
     await downloadFromServer();
@@ -12,8 +14,9 @@ async function init() {
 
 }
 
-
-
+/**
+ * this function creates Variables from the Form element in addTask.html
+ */
 async function addTask() {
     let taskTitle = document.getElementById('titleInputfield').value;
     let taskDate = document.getElementById('dateInputfield').value;
@@ -21,6 +24,10 @@ async function addTask() {
     let taskUrgency = document.getElementById('taskUrgency').value;
     let taskDescription = document.getElementById('taskDescription').value;
 
+    /**
+     * this funktions creats a variable to save the elements from the Form in addTask.html
+     * new variable task
+     */
 
     let task = {
         'taskTitle': taskTitle,
@@ -34,18 +41,34 @@ async function addTask() {
 
     };
 
+
+    /**
+     * this funktions pushes the new variable task into the array tasks
+     * @param {variable} task 
+     */
+
     allTasks.push(task);
     selectedUser = null;
-    console.log(allTasks);
     deletAllVallus();
-
+    /**
+     * alert to Succes s
+     */
 
     alert('SUCCESS');
+
+
+    /**
+     * function to change JSON tasks to string and save it to backend
+     */
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
-    refreshPage();
+    //refreshPage();
 }
 
+
+/**
+ * function to delet all Vallues
+ */
 
 
 function deletAllVallus() {
@@ -55,64 +78,74 @@ function deletAllVallus() {
     document.getElementById('taskUrgency').value = '';
     document.getElementById('taskDescription').value = '';
     document.getElementById('selectPersonImg').innerHTML = '';
-
-    //allTasks = [];
-
 }
+
+
+/**
+ * User Jsson
+ */
+
 
 let users = [{
-    'name': 'Sani',
-    'email': 'sani@gmail.com',
-    'img': './images/african-lion-ga78658d36_640.jpg',
-},
+        'name': 'Sani',
+        'email': 'sani@gmail.com',
+        'img': './images/african-lion-ga78658d36_640.jpg',
+    },
 
-{
-    'name': 'Ali',
-    'email': 'ali@gmail.com',
-    'img': './images/panda-g17dbddcd4_640.jpg',
-},
+    {
+        'name': 'Ali',
+        'email': 'ali@gmail.com',
+        'img': './images/panda-g17dbddcd4_640.jpg',
+    },
 
-{
-    'name': 'Peter',
-    'email': 'peter@gmail.com',
-    'img': './images/bear-g0db275b07_640.jpg',
-}
+    {
+        'name': 'Peter',
+        'email': 'peter@gmail.com',
+        'img': './images/bear-g0db275b07_640.jpg',
+    }
 ];
 
-console.log('user', users);
+/**
+ * function to Creat a new User
+ */
+
 
 
 function addUsers() {
     document.getElementById('add').classList.remove('d-none');
     let creatUsers = document.getElementById('add');
-
     creatUsers.innerHTML = '';
-
     for (let i = 0; i < users.length; i++) {
         let person = users[i]
-        console.log('person', person.name)
-
         creatUsers.innerHTML += ` 
         <div  onclick="addImg(${i})" class="userCart">
         <img  src="${person.img}" alt=""> <p class="nameStyle"> ${person.name} </p> 
         <p class="emailStyle"> ${person.email} </p>
         </div>        
         `;
-
-
     }
-
-
 }
+
+/**
+ * function to refresh Page
+ */
 
 function refreshPage() {
     window.location.reload();
 }
 
+/**
+ * function to Remove User Card
+ */
+
 function removeUsersCard() {
     document.getElementById('add').classList.add('d-none');
 }
 
+
+/**
+ * function to to the Selectet  User Img
+ */
 
 function selectimg() {
     let imgSelect = document.getElementById('selectPersonImg');
@@ -121,13 +154,15 @@ function selectimg() {
     <img class="userImg" src="${selectedUser.img}" alt=""> 
     </div>
     `
-    console.log(selectedUser)
 }
+
+/**
+ * function to Add  User Img
+ *
+ */
 
 function addImg(i) {
     selectedUser = users[i];
     selectimg();
     removeUsersCard();
-
-
 }
