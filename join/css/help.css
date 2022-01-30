@@ -2,8 +2,12 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+.contentMainHelp {
+    flex: 1;
+    margin: 15px 35px;
+}
+
 .buttonContainer {
-    margin-top: 25px;
     background-color: #F6F8FC;
     border: 1px solid black;
     text-align: center;

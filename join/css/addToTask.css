@@ -1,6 +1,15 @@
 body {
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
+    height: 100vh;
+}
+
+.contentChild {
+    /* margin-left: 50px;
+    margin-right: 50px;
+    width: 100%; */
+    flex: 1;
+    margin: 30px;
 }
 
 h3 {
@@ -26,7 +35,6 @@ h3 {
 }
 
 .taskData {
-    margin-top: 25px;
     background-color: #EBEDFC;
     padding: 20px;
     border-radius: 15px;
@@ -78,7 +86,7 @@ h3 {
     top: 25px;
     left: 200px;
     right: 0px;
-    bottom: 30px;
+    bottom: 15px;
     border: 1px solid black;
     box-shadow: inset 0 0 1em blue, 0 0 1em black;
 }
