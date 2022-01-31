@@ -10,7 +10,6 @@ body {
     width: 100%; */
     flex: 1;
     margin: 2%;
-    margin-top: 5%;
 }
 
 h3 {
@@ -40,6 +39,7 @@ h3 {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0px 8px 0;
+    height: 85vh;
 }
 
 .taskDataParents {
