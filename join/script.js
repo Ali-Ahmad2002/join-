@@ -28,7 +28,7 @@ function includeHTML() {
 
 
 function load() {
+    document.getElementById('singnin').innerHTML = " ";
     includeHTML();
-    // document.getElementById('singnin').classList.add('d-none');
-    console.log('hello');
+
 }
