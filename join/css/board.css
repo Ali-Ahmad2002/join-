@@ -2,6 +2,7 @@ body {
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
     height: 100vh;
+    
 }
 
 .board {
@@ -94,21 +95,23 @@ body {
 .two-container {
     display: flex;
     justify-content: center;
-    margin-top: 0;
+    margin-top: 2em;
 }
 
 @media (max-width: 1000px) {
-
+    
     .board {
         display: flex;
-        margin-top: 5em;
+        margin-top: 3em;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
     .inside-container {
-        width: 22vh;
+        width: 19vh;
+        height: 100vh;
+      
     }
 
     .container-with-headline {
@@ -138,6 +141,7 @@ body {
 
     .two-container {
         flex-direction: column;
+        justify-content: center;
     }
 
     .container-with-headline {
@@ -156,4 +160,27 @@ body {
     .card {
         padding: 0.5em;
     }
+}
+
+@media (max-height: 500px ) {
+    html { overflow: hidden; }
+    .inside-container {
+        width: 19vw;
+        padding: 0.25em;
+       
+    }
+    .board {
+        flex-direction: row;
+        justify-content: center;
+        
+        
+    }
+    .two-container {
+        flex-direction: row;
+    }
+
+    .head-line {
+        font-size: 1em;
+    }
+
 }
