@@ -2,14 +2,19 @@ body {
     font-family: 'Raleway', sans-serif;
     overflow: hidden;
     height: 100vh;
+    margin: 0;
 }
 
 .contentChild {
     /* margin-left: 50px;
     margin-right: 50px;
     width: 100%; */
+    display: flex;
+    justify-content: center;
     flex: 1;
-    margin: 2%;
+    margin: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 h3 {
@@ -36,30 +41,50 @@ h3 {
 
 .taskData {
     background-color: #EBEDFC;
-    padding: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
     border-radius: 15px;
     box-shadow: 0 0px 8px 0;
-    height: 85vh;
+    width: 100%;
 }
 
 .taskDataParents {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
 .taskDataChild {
-    padding-right: 30px;
+    width: 50%;
 }
 
 .input {
-    width: 100%;
-    padding: 13px;
+    width: 99%;
     border-radius: 5px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+input[type="date"] {
+    align-items: center;
+    display: -webkit-inline-flex;
+    font-family: monospace;
+    /* padding-inline-start: 100px; */
+    cursor: default;
+    overflow: hidden;
+    padding: 15px 2px;
+}
+
+input[type="text"] {
+    padding: 16px 2px;
 }
 
 .inputselect {
     width: 100%;
-    padding: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 5px;  
 }
 
 .textArea {
@@ -70,7 +95,7 @@ h3 {
 }
 
 .btns {
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .addImg {
