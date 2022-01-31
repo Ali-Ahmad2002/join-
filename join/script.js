@@ -25,3 +25,10 @@ function includeHTML() {
         }
     }
 }
+
+
+function load() {
+    includeHTML();
+    // document.getElementById('singnin').classList.add('d-none');
+    console.log('hello');
+}
