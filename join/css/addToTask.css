@@ -84,7 +84,7 @@ input[type="text"] {
     width: 100%;
     padding-bottom: 15px;
     padding-top: 15px;
-    border-radius: 5px;  
+    border-radius: 5px;
 }
 
 .textArea {
@@ -160,32 +160,46 @@ input[type="text"] {
         margin-left: 0px !important;
         margin-right: 0px !important;
         overflow-y: scroll;
+        display: block;
+        padding-left: unset;
+        padding-right: unset;
     }
-
     .addTaskHead {
+        padding-top: 5px;
         text-align: center;
     }
     .taskData {
-        /* margin-top: 55px; */
+        margin-top: 50px;
         border-radius: unset;
+        padding-left: unset;
+        padding-right: unset;
+        padding-bottom: 15px;
     }
     .taskDataParents {
         display: flex;
         flex-direction: column;
         padding-right: 15px;
     }
-    .input {
+    .taskDataChild {
         width: 100%;
     }
+    .taskDataChild h3 {
+        text-align: center;
+    }
+    .input {
+        margin-left: 13px;
+        width: 90%;
+    }
     .inputselect {
-        width: 110%;
+        margin-left: 13px;
+        width: 92%;
     }
     body {
         overflow: unset;
     }
     .textArea {
-        width: 100%;
-        padding: 15px;
+        margin-left: 13px;
+        width: 89%;
     }
     .users {
         position: unset;
@@ -195,7 +209,8 @@ input[type="text"] {
         font-size: 16px;
     }
     .addBtn {
-        width: 110%;
+        margin-left: 13px;
+        width: 90%;
         margin-top: 10px;
         padding: 15px;
         font-size: 16px;
