@@ -1,8 +1,11 @@
+/**
+ * function help changes the inner html of the help 
+ * when you click on first Steps
+ */
+
 function help() {
     let helpTasks = document.getElementById('help');
-
-    // helpTasks.innerHTML = "";
-
+    helpTasks.innerHTML = "";
     helpTasks.innerHTML = `
     <span><h2>First Steps</h2>
       <p class="firstTextStyle">
@@ -14,6 +17,10 @@ function help() {
     changeColorOne();
 }
 
+/**
+ * function changeColorOne() change the color of the help button 
+ */
+
 function changeColorOne() {
     document.getElementById('firstStep').classList.add('buttonJs');
     document.getElementById('addTask').classList.remove('buttonJs');
@@ -22,17 +29,15 @@ function changeColorOne() {
 }
 
 
-
+/**
+ * function addhelp changes the inner html of the help when 
+ * you click on  Add Task
+ */
 
 function addhelp() {
 
     let helpTasks = document.getElementById('help');
-
-    // let toglge = document.getElementById('helpButton');
-    // toglge.classList.toggle("buttonJs");
-
     helpTasks.innerHTML = "";
-
     helpTasks.innerHTML = `
     <h2 class="headlineStyle">1. Add Task</h2>    
     <img class="imgHelp" src="images/Screenshot addToTasks .png" alt="">
@@ -41,11 +46,14 @@ function addhelp() {
      Enter Title, Category, Description, Due Date, Importance and assign the Task to a Person.
      After all Fields have been filled in, the Task is created with the 'Create Task' Button
     </p>
-   
-  
-  `
+    `
     addTaskColor();
 }
+
+/**
+ * function changeColorOne() change the color of the Add Taks button
+ */
+
 
 function addTaskColor() {
     document.getElementById('firstStep').classList.remove('buttonJs');
@@ -54,12 +62,14 @@ function addTaskColor() {
     document.getElementById('board').classList.remove('buttonJs');
 }
 
+/**
+ * function addhelp changes the inner html of the help 
+ * when you click on Backlog
+ */
 
 function backloghelp() {
     let helpTasks = document.getElementById('help');
-
     helpTasks.innerHTML = "";
-
     helpTasks.innerHTML = `
     <span><h2 class="headlineStyle">2. Backlog</h2>
         <img class="imgHelp"  src="images/Screenshot backlog.png" alt="">
@@ -70,9 +80,12 @@ function backloghelp() {
     </p>
     </span>  
   `
-
     backlogColor();
 }
+
+/**
+ * function changeColorOne() change the color of the backlogColor button
+ */
 
 function backlogColor() {
     document.getElementById('firstStep').classList.remove('buttonJs');
@@ -82,11 +95,15 @@ function backlogColor() {
 }
 
 
+/**
+ * function boardhelp changes the inner html of the help 
+ * when you click on boardhelp
+ */
+
+
 function boardhelp() {
     let helpTasks = document.getElementById('help');
-
     helpTasks.innerHTML = "";
-
     helpTasks.innerHTML = `
     <span><h2 class="headlineStyle">3. Board</h2>
     <img class="imgHelpBoard" src="images/Screenshot board.png" alt="">
@@ -110,6 +127,12 @@ function boardhelp() {
 
     boardColor();
 }
+
+
+/**
+ * function changeColorOne() change the color of the  boardColor button
+ */
+
 
 function boardColor() {
     document.getElementById('firstStep').classList.remove('buttonJs');
