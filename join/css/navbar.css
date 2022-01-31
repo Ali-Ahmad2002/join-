@@ -3,6 +3,16 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    animation: showSidebar 1.5s ease;
+}
+
+@keyframes showSidebar {
+    from {
+        margin-left: -100%;
+    }
+    to {
+        margin-left: 0%;
+    }
 }
 
 .navMain {
