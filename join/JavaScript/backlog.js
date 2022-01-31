@@ -6,7 +6,10 @@ allTasks = [];
 allTasksToBoard = [];
 
 
-
+/**
+ * function donwload all tasks from server 
+ * and filter the position
+ */
 
 async function init() {
     await downloadFromServer();
@@ -20,11 +23,15 @@ async function init() {
     renderTasks();
 }
 
+
+/**
+ * function to render all tasks at the respective positions
+ * and filter the border colors
+ */
 async function renderTasks() {
 
     for (let i = 0; i < allTasksToBoard.length; i++) {
         theTask = allTasksToBoard[i];
-        //let theTask = allTasks[i];
         let taskCreator = theTask['user'].img;
         let taskCreatorName = theTask['user'].name;
         let taskCreatorEmail = theTask['user'].email;
@@ -60,21 +67,14 @@ async function renderTasks() {
             </div>
         </div>
         `;
-
-        // if (taskCreatorName == 'Peter') {
-        //     document.getElementById('taskContainer').classList.add('leftBorderPeter');
-        // } else if (taskCreatorName == 'Ali') {
-        //     document.getElementById('taskContainer').classList.add('leftBorderAli');
-        // } else if(taskCreatorName=='Sani') {
-        //     document.getElementById('taskContainer').classList.add('leftBorderSani');
-        // }
-
     }
-
-    //deleteUser(allTasksToBoard);
-
 }
 
+
+/**
+ * function to open a detail window at the 
+ * clicked task  
+ */
 function openDetails(index) {
 
     let theTask = allTasksToBoard[index];
@@ -108,6 +108,11 @@ function openDetails(index) {
 
 }
 
+
+/**
+ * function to close the detail window 
+ * of the clicked task
+ */
 function closeDetails() {
     let detailContainer = document.getElementById('detailMain');
     detailContainer.classList.add('d-none');
@@ -115,6 +120,10 @@ function closeDetails() {
 }
 
 
+/**
+ * function to send the task from backlog
+ * to the board and remove it from backlog
+ */
 async function goToBoard(i) {
 
     allTasksToBoard[i].poll = 'board';
@@ -125,12 +134,15 @@ async function goToBoard(i) {
     console.log('', allTasksToBoard)
     alert('SUCCESS to Board');
 
-
-
     refreshPage();
 
 }
 
+
+/**
+ * function to delet the task at the respective position
+ * and from the backend server
+ */
 async function deletTask(position) {
     allTasks.splice(position, 1);
 
@@ -140,17 +152,18 @@ async function deletTask(position) {
     refreshPage();
 }
 
+
+/**
+ * function to refresh the page
+ */
 function refreshPage() {
     window.location.reload();
 }
 
-function goToBoardaa(i) {
-    console.log(i);
 
-    alert('SUCCESS to Board');
-
-}
-
+/**
+ * function to save the tasks in the backend
+ */
 async function saveInBackEnd() {
 
 

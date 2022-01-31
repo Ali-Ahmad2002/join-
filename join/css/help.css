@@ -68,20 +68,44 @@ body {
     .buttonHead {
         padding: 1em;
     }
+
     .button {
         padding: 1em;
         margin-left: 10px;
     }
+
+    .buttonContainer {
+        border-radius: unset;
+        margin-top: 1em;
+        border: unset;
+        background-color: #ebedfc;
+    }
+
     .imgHelp {
         width: 100%;
         height: 16em;
     }
+
     .textStyle {
         margin-bottom: unset;
         margin: 1em;
     }
+
     .imgHelpBoard {
         width: 100%;
         height: 15em;
+    }
+
+    .contentMainHelp {
+        margin: unset;
+        margin-top: 5em;
+    }
+
+    .headlinesHelp {
+        text-align: center;
+    }
+
+    .firstTextStyle {
+        padding: 1em;
     }
 }
