@@ -136,6 +136,11 @@ h3 {
         margin-right: 0px !important;
         overflow-y: scroll;
     }
+
+    .addTaskHead {
+        text-align: center;
+    }
+
     .taskData {
         /* margin-top: 55px; */
         border-radius: unset;
