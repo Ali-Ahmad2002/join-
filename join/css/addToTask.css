@@ -3,6 +3,7 @@ body {
     overflow: hidden;
     height: 100vh;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .contentChild {
@@ -155,6 +156,15 @@ input[type="text"] {
     background-color: #347afa;
 }
 
+.alert {
+    padding: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    text-align: center;
+}
+
 @media (max-width: 1000px) {
     .contentChild {
         margin-left: 0px !important;
@@ -165,7 +175,7 @@ input[type="text"] {
         padding-right: unset;
     }
     .addTaskHead {
-        padding-top: 5px;
+        padding-top: 13px;
         text-align: center;
     }
     .taskData {
@@ -182,9 +192,10 @@ input[type="text"] {
     }
     .taskDataChild {
         width: 100%;
-    }
-    .taskDataChild h3 {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
     }
     .input {
         margin-left: 13px;
@@ -202,7 +213,12 @@ input[type="text"] {
         width: 89%;
     }
     .users {
-        position: unset;
+        position: fixed;
+        top: 53px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
     }
     .userCart {
         flex-direction: column;
@@ -214,5 +230,40 @@ input[type="text"] {
         margin-top: 10px;
         padding: 15px;
         font-size: 16px;
+    }
+    .userImgContainer {
+        text-align: center;
+    }
+    .btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px) and (orientation: landscape) {
+    .taskDataChild {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .users {
+        position: fixed;
+        top: 55px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: auto;
     }
 }
