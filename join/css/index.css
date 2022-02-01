@@ -1,0 +1,13 @@
+.d-none {
+    display: none;
+}
+
+.btnClass {
+    margin-bottom: 10px !important;
+    border: 1px solid #00000038 !important;
+}
+
+
+.logContainer {
+    width: 100%;
+}

@@ -9,7 +9,7 @@ function includeHTML() {
         if (file) {
             /* Make an HTTP request using the attribute value as the file name: */
             xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
+            xhttp.onreadystatechange = function () {
                 if (this.readyState == 4) {
                     if (this.status == 200) { elmnt.innerHTML = this.responseText; }
                     if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
@@ -65,6 +65,7 @@ async function accountregister(event) {
 
     document.getElementById('usersname').value = '';
     document.getElementById('passwordname').value = '';
+    showLogin();
 }
 
 
@@ -89,10 +90,10 @@ async function login() {
     } else {
         console.log('Hallo nich geklappt');
         console.log('userlogin login', userlogin)
-            // document.getElementById('loginfailt').classList.remove('d-none');
-            // document.getElementById('loginfailt').innerHTML = 'Please enter the right Username or Password<br> or Register please';
-            // document.getElementById('availableuser').value = '';
-            // document.getElementById('availablepwd').value = '';
+        // document.getElementById('loginfailt').classList.remove('d-none');
+        // document.getElementById('loginfailt').innerHTML = 'Please enter the right Username or Password<br> or Register please';
+        // document.getElementById('availableuser').value = '';
+        // document.getElementById('availablepwd').value = '';
     }
 }
 
@@ -111,4 +112,14 @@ function load() {
     // includeHTML();
     window.location.href = 'addtoTask.html';
 
+}
+
+function showRegister() {
+    document.getElementById('containerLog').classList.add('d-none');
+    document.getElementById('containerRegister').classList.remove('d-none');
+}
+
+function showLogin() {
+    document.getElementById('containerLog').classList.remove('d-none');
+    document.getElementById('containerRegister').classList.add('d-none');
 }
