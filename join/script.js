@@ -25,3 +25,90 @@ function includeHTML() {
         }
     }
 }
+
+let userlogin = [{
+    'username': [],
+    'password': []
+}];
+
+
+
+/**
+ * registered the user for an a account
+ * 
+ */
+async function accountregister(event) {
+    event.preventDefault();
+
+    //  document.getElementById('loginfailt').classList.add('d-none');
+
+    let user = document.getElementById('availableuser').value;
+    let pwd = document.getElementById('availablepwd').value;
+    console.log(' user', user)
+    console.log('pwd', pwd)
+
+    if (userlogin.find(use => use.username === user)) {
+        userexists();
+    } else {
+        await pushuser(user, pwd);
+        console.log('pushUser', pushuser)
+
+
+        // document.getElementById('registerfailt').classList.remove('d-none');
+        // document.getElementById('registerfailt').classList.add('registred');
+        // document.getElementById('registerfailt').innerHTML = 'You are now Registered';
+
+        setTimeout(() => {
+            registered();
+        }, 2000);
+    }
+
+    document.getElementById('usersname').value = '';
+    document.getElementById('passwordname').value = '';
+}
+
+
+async function pushuser(user, pwd) {
+    userlogin.push({
+        'username': user,
+        'password': pwd,
+    });
+    await backend.setItem('userlogin', JSON.stringify(userlogin));
+
+}
+console.log('userlogin login', userlogin)
+
+async function login() {
+    let loginuser = document.getElementById('usersname').value;
+    let loginpwd = document.getElementById('passwordname').value;
+    console.log('loginuser', loginuser)
+    console.log('loginpwd', loginpwd)
+
+    if (userlogin.find(use => use.username === loginuser) && userlogin.find(pw => pw.password === loginpwd)) {
+        window.location.href = 'addtoTask.html';
+    } else {
+        console.log('Hallo nich geklappt');
+        console.log('userlogin login', userlogin)
+            // document.getElementById('loginfailt').classList.remove('d-none');
+            // document.getElementById('loginfailt').innerHTML = 'Please enter the right Username or Password<br> or Register please';
+            // document.getElementById('availableuser').value = '';
+            // document.getElementById('availablepwd').value = '';
+    }
+}
+
+
+function registered() {
+    console.log('Regeistriert');
+}
+
+
+function userexists() {
+    console.log('Usser existiert')
+}
+
+function load() {
+    document.getElementById('singnin').innerHTML = " ";
+    // includeHTML();
+    window.location.href = 'addtoTask.html';
+
+}

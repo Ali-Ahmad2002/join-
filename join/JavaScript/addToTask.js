@@ -47,14 +47,21 @@ async function addTask() {
      * @param {variable} task 
      */
 
+
     allTasks.push(task);
     selectedUser = null;
     deletAllVallus();
-    /**
-     * alert to Succes s
-     */
+    successToBoard(taskTitle);
 
-    alert('SUCCESS');
+    setTimeout(() => {
+        refreshPage()
+
+    }, 4000);
+
+
+
+
+
 
 
     /**
@@ -165,4 +172,23 @@ function addImg(i) {
     selectedUser = users[i];
     selectimg();
     removeUsersCard();
+}
+
+
+/**
+ * function to the Succes to Board
+ */
+
+function successToBoard(taskTitle) {
+    let succes = document.getElementById('taskData');
+    // succes.innerHTML = "";
+    succes.innerHTML = `
+        <div class="alert">
+        <p>
+        Success!! <br>
+        Your Task with the Title  <b>"${taskTitle}"</b> has been saved <br>
+        You can now create a new Task, or visit Board to continue working with this Task. </p>
+        </div>
+
+        `
 }
