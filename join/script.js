@@ -86,7 +86,8 @@ async function login() {
     console.log('loginpwd', loginpwd)
 
     if (userlogin.find(use => use.username === loginuser) && userlogin.find(pw => pw.password === loginpwd)) {
-        window.location.href = 'addtoTask.html';
+        includeHTML();
+        window.location.href = 'addToTask.html';
     } else {
         console.log('Hallo nich geklappt');
         console.log('userlogin login', userlogin)
@@ -109,8 +110,8 @@ function userexists() {
 
 function load() {
     document.getElementById('singnin').innerHTML = " ";
-    // includeHTML();
-    window.location.href = 'addtoTask.html';
+    includeHTML();
+    window.location.href = 'addToTask.html';
 
 }
 
