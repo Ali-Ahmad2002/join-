@@ -16,6 +16,10 @@ async function init() {
 
 }
 
+/**
+ * function for Drag and Drob the cards from container to container 
+ */
+
 function updateHtml() {
     let todo = todoFilter.filter(t => !t['list'] || t['list'] == 'toDo'); //!!
 
@@ -95,15 +99,26 @@ function updateHtml() {
 }
 
 
+/**
+ * function to start Drag
+ */
 
 function startDragging(createdDate) {
-    currentDraggedElement = createdDate; //!!
+    currentDraggedElement = createdDate; 
 }
 
-function allowDrop(ev) { //!!!
+/**
+ * function to allow Drop
+ */
+
+
+function allowDrop(ev) { 
     ev.preventDefault();
 }
 
+/**
+ * function to filter and find the cards, set the cards in arr allTasks.
+ */
 async function moveto(list) {
     const task = todoFilter.find(t => t.createdDate === currentDraggedElement);
     task.list = list;
@@ -111,6 +126,11 @@ async function moveto(list) {
     updateHtml();
 
 }
+
+
+/**
+ * function to delete a card
+ */
 
 async function ToTrash(position, list) {
     let toDolist = todoFilter.filter(t => t['list'] === list);
@@ -125,14 +145,28 @@ async function ToTrash(position, list) {
     refreshPage();
 }
 
+
+/**
+ * function refresh Page, reload page
+ */
+
 function refreshPage() {
     window.location.reload();
 }
+
+
+/**
+ * function to show and change the container color if the card will be drag
+ */
 
 function highlight(card) {
     document.getElementById(card).classList.add('drag-area-highlight');
 
 }
+
+/**
+ * function to hidden the container color if the card will be dropped
+ */
 
 function removeHighlight(card) {
     document.getElementById(card).classList.remove('drag-area-highlight');
