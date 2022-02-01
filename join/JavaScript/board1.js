@@ -117,7 +117,7 @@ function allowDrop(ev) {
 }
 
 /**
- * function to filter and find the cards, set the cards in arr allTasks
+ * function to filter and find the cards, set the cards in arr allTasks.
  */
 async function moveto(list) {
     const task = todoFilter.find(t => t.createdDate === currentDraggedElement);
