@@ -20,6 +20,7 @@ async function init() {
 
     console.log('alltaks', allTasks)
     console.log('alltaksboard', allTasksToBoard)
+
     renderTasks();
 }
 
@@ -28,10 +29,11 @@ async function init() {
  * function to render all tasks at the respective positions
  * and filter the border colors
  */
-async function renderTasks() {
+function renderTasks() {
 
     for (let i = 0; i < allTasksToBoard.length; i++) {
         theTask = allTasksToBoard[i];
+        console.log('the taks', allTasksToBoard)
         let taskCreator = theTask['user'].img;
         let taskCreatorName = theTask['user'].name;
         let taskCreatorEmail = theTask['user'].email;

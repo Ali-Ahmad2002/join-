@@ -104,7 +104,7 @@ function userexists() {
 }
 
 function load() {
-    document.getElementById('singnin').innerHTML = " ";
+    document.getElementById('singnin').innerHTML = "";
     //includeHTML();
     window.location.href = 'addToTask.html';
 
