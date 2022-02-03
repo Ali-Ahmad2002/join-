@@ -122,7 +122,7 @@ input[type="text"] {
     width: 150px;
     height: 100px;
     object-fit: cover;
-    padding: 20px;
+    padding: 35px;
 }
 
 .userCart {
@@ -175,7 +175,7 @@ input[type="text"] {
         padding-right: unset;
     }
     .addTaskHead {
-        padding-top: 13px;
+        padding-top: 50px;
         text-align: center;
     }
     .taskData {
@@ -260,7 +260,7 @@ input[type="text"] {
     }
     .users {
         position: fixed;
-        top: 55px;
+        top: 85px;
         left: 0;
         right: 0;
         bottom: 0;
