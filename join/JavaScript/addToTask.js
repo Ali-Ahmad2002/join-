@@ -28,7 +28,6 @@ async function addTask() {
      * this funktions creats a variable to save the elements from the Form in addTask.html
      * new variable task
      */
-
     let task = {
         'taskTitle': taskTitle,
         'taskDate': taskDate,
@@ -57,12 +56,6 @@ async function addTask() {
         refreshPage()
 
     }, 4000);
-
-
-
-
-
-
 
     /**
      * function to change JSON tasks to string and save it to backend
@@ -187,7 +180,7 @@ function successToBoard(taskTitle) {
         <p>
         Success!! <br>
         Your Task with the Title  <b>"${taskTitle}"</b> has been saved <br>
-        You can now create a new Task, or visit Board to continue working with this Task. </p>
+        </p>
         </div>
 
         `

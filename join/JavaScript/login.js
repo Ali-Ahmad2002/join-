@@ -3,6 +3,11 @@ setURL('http://gruppe-145.developerakademie.net/smallest_backend_ever');
 
 let userlogin = [];
 
+
+/**
+ * function initi to download backend item 
+ * from server
+ */
 async function initi() {
     await downloadFromServer();
     userlogin = JSON.parse(backend.getItem('userlogin')) || [];
@@ -41,13 +46,6 @@ async function accountregister(event) {
         userexists();
     } else {
         await pushuser(user, pwd);
-
-
-
-        // document.getElementById('registerfailt').classList.remove('d-none');
-        // document.getElementById('registerfailt').classList.add('registred');
-        // document.getElementById('registerfailt').innerHTML = 'You are now Registered';
-
         setTimeout(() => {
             registered();
         }, 2000);
@@ -58,7 +56,11 @@ async function accountregister(event) {
     showLogin();
 }
 
-
+/**
+ * function to push the user data
+ * @param {*} user 
+ * @param {*} pwd 
+ */
 async function pushuser(user, pwd) {
     userlogin.push({
         'username': user,
@@ -72,7 +74,9 @@ async function pushuser(user, pwd) {
 }
 
 
-
+/**
+ * function to login 
+ */
 async function login() {
     let loginuser = document.getElementById('usersname').value;
     let loginpwd = document.getElementById('passwordname').value;
@@ -86,23 +90,27 @@ async function login() {
 
     } else {
         alert('You are not Registered')
-            // document.getElementById('loginfailt').classList.remove('d-none');
-            // document.getElementById('loginfailt').innerHTML = 'Please enter the right Username or Password<br> or Register please';
-            // document.getElementById('availableuser').value = '';
-            // document.getElementById('availablepwd').value = '';
     }
 }
 
-
+/**
+ * function to register
+ */
 function registered() {
     console.log('Regeistriert');
 }
 
-
+/**
+ * function to check if the user exist
+ */
 function userexists() {
     console.log('Usser existiert')
 }
 
+
+/**
+ * function to load the addToTask.html site
+ */
 function load() {
     document.getElementById('singnin').innerHTML = "";
     //includeHTML();
@@ -110,16 +118,28 @@ function load() {
 
 }
 
+
+/**
+ * function to show register and 
+ * hide login
+ */
 function showRegister() {
     document.getElementById('containerLog').classList.add('d-none');
     document.getElementById('containerRegister').classList.remove('d-none');
 }
 
+/**
+ *  function to show login and
+ *  hide register
+ */
 function showLogin() {
     document.getElementById('containerLog').classList.remove('d-none');
     document.getElementById('containerRegister').classList.add('d-none');
 }
 
+/**
+ *  show the password text
+ */
 function myFunction() {
     var x = document.getElementById("passwordname");
     if (x.type === "password") {
@@ -129,6 +149,9 @@ function myFunction() {
     }
 }
 
+/**
+ * same function with other ID
+ */
 function myFunction1() {
     var x = document.getElementById("availablepwd");
     if (x.type === "password") {
@@ -138,6 +161,9 @@ function myFunction1() {
     }
 }
 
+/**
+ * same function with other ID
+ */
 function myFunction2() {
     var x = document.getElementById("availablepwd1");
     if (x.type === "password") {
