@@ -11,6 +11,18 @@ body {
     position: relative;
 }
 
+.thePlaceholder {
+    height: 300px;
+    display: flex;
+    justify-content: center;align-items: center;
+}
+
+.thePlaceholder span {
+    font-size: 30px;
+    color: gray;
+    font-weight: bolder;
+}
+
 .headlines {
     margin-top: 75px;
 }
@@ -39,6 +51,21 @@ body {
     display: flex;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.successPage {
+    position: absolute;
+    height: 512px;
+    width: 100%;
+    z-index: 99999;
+    background-color: #ebedfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.successPage span {
+    font-size: 35px;
 }
 
 .testContent {
@@ -215,6 +242,12 @@ body {
         text-align: center;
     }
 
+    .successPage {
+        top: 6em;
+        text-align: center;
+        height: 100%;
+    }
+
     .mainHead1 {
         font-size: 1.2em;
         height: fit-content;
@@ -318,5 +351,11 @@ body {
 
     .closeBtnDetail {
         padding-right: 15%;
+    }
+
+    .successPage {
+        height: 100%;
+        align-items: flex-start;
+        padding-top: 10em;
     }
 }

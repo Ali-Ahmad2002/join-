@@ -48,7 +48,15 @@ function renderTasks() {
         let taskDescription = theTask['taskDescription'];
 
         let content = document.getElementById('content');
-        content.innerHTML += showTheTask(i, taskCreator, taskCreatorName, taskCreatorEmail, taskCategory, taskDescription);
+
+        if (allTasksToBoard == 0) {
+            document.getElementById('thePlaceholder').classList.remove('d-none');
+        } else {
+            document.getElementById('thePlaceholder').classList.add('d-none');
+            content.innerHTML += showTheTask(i, taskCreator, taskCreatorName, taskCreatorEmail, taskCategory, taskDescription);
+        }
+
+
     }
 }
 
@@ -102,7 +110,7 @@ function openDetails(index) {
 function showDetails(taskCreatorName, taskCreatorEmail, taskCategory, taskDescription, taskDate, taskUrgency) {
     return `
     <div class="mainDetailContent">
-        <div class="detailContentStats"> name:<h2 class="padding">${taskCreatorName}</h2> </div>
+        <div class="detailContentStats"> Name:<h2 class="padding">${taskCreatorName}</h2> </div>
         <div class="detailContentStats">E-mail: <p class="padding">${taskCreatorEmail}</p></div> 
         <div class="detailContentStats">Category: <p class="padding">${taskCategory}</p></div> 
         <div class="detailContentStats">Date: <p class="padding">${taskDate}</p></div> 
@@ -135,11 +143,14 @@ async function goToBoard(i) {
 
     await saveInBackEnd();
 
-    console.log('goo board positon', allTasksToBoard)
-    console.log('', allTasksToBoard)
-    alert('SUCCESS to Board');
+    document.getElementById('successPage').classList.remove('d-none');
 
-    refreshPage();
+    setTimeout(() => {
+        document.getElementById('successPage').classList.add('d-none');
+        refreshPage();
+    }, 1500);
+
+    
 
 }
 
