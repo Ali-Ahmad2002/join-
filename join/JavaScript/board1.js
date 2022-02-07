@@ -27,17 +27,8 @@ function updateHtml() {
 
     for (let index = 0; index < todo.length; index++) {
         const element = todo[index];
-        document.getElementById('toDo').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card">
-        
-       <span class="title"> ${todo[index].taskTitle}  </span>
-
-       <span class="description"> ${todo[index].taskDescription} </span>
-
-        <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'toDo')">
-
-        </div>`;
+        document.getElementById('toDo').innerHTML += showTheTodo(element, index, todo);
     }
-
 
     let inProgress = todoFilter.filter(t => t['list'] == 'inProgress');
 
@@ -45,17 +36,8 @@ function updateHtml() {
 
     for (let index = 0; index < inProgress.length; index++) {
         const element = inProgress[index];
-        document.getElementById('inProgress').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card cardInProgress">
-        
-        <span class="title"> ${inProgress[index].taskTitle}  </span>
-        
-        <span class="description"> ${inProgress[index].taskDescription} </span>
-
-        <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'inProgress')">
-
-        </div>`;
+        document.getElementById('inProgress').innerHTML += showToProgress(element, index, inProgress);
     }
-
 
     let testing = todoFilter.filter(t => t['list'] == 'testing');
 
@@ -63,17 +45,8 @@ function updateHtml() {
 
     for (let index = 0; index < testing.length; index++) {
         const element = testing[index];
-        document.getElementById('testing').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderTesting">
-        
-        <span class="title"> ${testing[index].taskTitle}  </span>
-        
-        <span class="description"> ${testing[index].taskDescription} </span>
-
-        <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'Testing')">
-
-        </div>`;
+        document.getElementById('testing').innerHTML += showTesting(index, element, testing);
     }
-
 
     let done = todoFilter.filter(t => t['list'] == 'done');
 
@@ -81,30 +54,93 @@ function updateHtml() {
 
     for (let index = 0; index < done.length; index++) {
         const element = done[index];
-        document.getElementById('done').innerHTML += `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderDone">
-
-        <span class="title"> ${done[index].taskTitle}  </span>
-      
-        <span class="description"> ${done[index].taskDescription}  </span>
-        
-       
-        
-        <div>
-        <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'done')">
-        </div>
-
-        </div>`;
+        document.getElementById('done').innerHTML += showDone(index, element, done);
     }
-
 }
 
+
+/**
+ * function to render the tasks in the todo container
+ * @param {*} element 
+ * @param {*} index 
+ * @param {*} todo 
+ * @returns 
+ */
+function showTheTodo(element, index, todo) {
+    return `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card">
+        
+    <span class="title"> ${todo[index].taskTitle}  </span>
+
+    <span class="description"> ${todo[index].taskDescription} </span>
+
+     <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'toDo')">
+
+     </div>`
+}
+
+/**
+ * function to render the tasks in the progress container
+ * @param {*} element 
+ * @param {*} index 
+ * @param {*} inProgress 
+ * @returns 
+ */
+function showToProgress(element, index, inProgress) {
+    return `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card cardInProgress">
+        
+    <span class="title"> ${inProgress[index].taskTitle}  </span>
+    
+    <span class="description"> ${inProgress[index].taskDescription} </span>
+
+    <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'inProgress')">
+
+    </div>`
+}
+
+
+/**
+ * function to render the tasks in the testing container
+ * @param {*} index 
+ * @param {*} element 
+ * @param {*} testing 
+ * @returns 
+ */
+function showTesting(index, element, testing) {
+    return `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderTesting">
+        
+    <span class="title"> ${testing[index].taskTitle}  </span>
+    
+    <span class="description"> ${testing[index].taskDescription} </span>
+
+    <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'Testing')">
+
+    </div>`
+}
+
+
+/**
+ * function to render the tasks in the done container
+ * @param {*} index 
+ * @param {*} element 
+ * @param {*} done 
+ * @returns 
+ */
+function showDone(index, element, done) {
+    return `<div draggable="true" ondragstart="startDragging(${element.createdDate})" class="card borderDone">
+                    <span class="title"> ${done[index].taskTitle}  </span>
+                    <span class="description"> ${done[index].taskDescription}  </span> 
+                <div>
+                    <img src="./images/trashPic.png" class="delete" onclick="ToTrash(${index}, 'done')">
+                </div>
+            </div>`
+}
 
 /**
  * function to start Drag
  */
 
 function startDragging(createdDate) {
-    currentDraggedElement = createdDate; 
+    currentDraggedElement = createdDate;
 }
 
 /**
@@ -112,7 +148,7 @@ function startDragging(createdDate) {
  */
 
 
-function allowDrop(ev) { 
+function allowDrop(ev) {
     ev.preventDefault();
 }
 

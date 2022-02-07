@@ -16,6 +16,8 @@ async function init() {
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
 
     allTasksToBoard = allTasks.filter(t => t.poll === 'backlog');
+    // backend.deleteItem('allTasks');
+    // backend.deleteItem('allTasksToBoard');
 
 
     console.log('alltaks', allTasks)
@@ -24,13 +26,18 @@ async function init() {
     renderTasks();
 }
 
+const random_hex_color_code = () => {
+    let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    return '#' + n.slice(0, 6);
+};
+
+console.log(random_hex_color_code())
 
 /**
  * function to render all tasks at the respective positions
  * and filter the border colors
  */
 function renderTasks() {
-
     for (let i = 0; i < allTasksToBoard.length; i++) {
         theTask = allTasksToBoard[i];
         console.log('the taks', allTasksToBoard)
@@ -40,36 +47,29 @@ function renderTasks() {
         let taskCategory = theTask['taskCategory'];
         let taskDescription = theTask['taskDescription'];
 
-        let color = 'black';
-
-        if (taskCreatorName == 'Peter') {
-            color = '#951515';
-        } else if (taskCreatorName == 'Ali') {
-            color = '#227210';
-        } else if (taskCreatorName == 'Sani') {
-            color = '#2d58d9';
-        }
-
         let content = document.getElementById('content');
-        content.innerHTML += `
-        
-        <div id="taskContainer" onclick="openDetails(${i})" class="mainSectionHeadlines mainSectionHeadlinesJS" style="border-left: 10px solid ${color};">
-            <div class="mainHead1">
-                <img class="mainHead1Img" src="${taskCreator}">
-                <div class="nameMailContainer">
-                    <span>${taskCreatorName}</span>
-                    <span>${taskCreatorEmail}</span>
-                </div>
-            </div> 
-             <span class="mainHead2 centerJS">${taskCategory}</span>
-             <span class="mainHead3 descriptionClass">${taskDescription}</span>
-             <div class="btnStyle">
-                <button class="addBtn" onclick="goToBoard(${i})">Go</button>
-                <button class="addBtn" onclick="deletTask(${i})">Delet</button>
-            </div>
-        </div>
-        `;
+        content.innerHTML += showTheTask(i, taskCreator, taskCreatorName, taskCreatorEmail, taskCategory, taskDescription);
     }
+}
+
+function showTheTask(i, taskCreator, taskCreatorName, taskCreatorEmail, taskCategory, taskDescription) {
+    return `  
+    <div id="taskContainer" class="mainSectionHeadlines mainSectionHeadlinesJS" style="border-left: 10px solid ${random_hex_color_code()};">
+        <div onclick="openDetails(${i})" class="mainHead1">
+            <img class="mainHead1Img" src="${taskCreator}">
+            <div class="nameMailContainer">
+                <span>${taskCreatorName}</span>
+                <span>${taskCreatorEmail}</span>
+            </div>
+        </div> 
+         <span onclick="openDetails(${i})" class="mainHead2 centerJS">${taskCategory}</span>
+         <span onclick="openDetails(${i})" class="mainHead3 descriptionClass">${taskDescription}</span>
+         <div class="btnStyle">
+            <button class="addBtn" onclick="goToBoard(${i})">Go</button>
+            <button class="addBtn" onclick="deletTask(${i})">Delet</button>
+        </div>
+    </div>
+    `
 }
 
 
@@ -96,18 +96,21 @@ function openDetails(index) {
     let content = document.getElementById('detail');
     content.innerHTML = '';
 
-    content.innerHTML += `
-            <div class="mainDetailContent">
-                <div class="detailContentStats"> name:<h2 class="padding">${taskCreatorName}</h2> </div>
-                <div class="detailContentStats">E-mail: <p class="padding">${taskCreatorEmail}</p></div> 
-                <div class="detailContentStats">Category: <p class="padding">${taskCategory}</p></div> 
-                <div class="detailContentStats">Date: <p class="padding">${taskDate}</p></div> 
-                <div class="detailContentStats">Description: <p class="padding">${taskDescription}</p></div> 
-                <div class="detailContentStats">Urgency: <p class="padding">${taskUrgency}</p></div> 
-                <img onclick="closeDetails()" class="closeBtnDetail" src="./images/close-window-32.png">
-            </div>
-        `;
+    content.innerHTML += showDetails(taskCreatorName, taskCreatorEmail, taskCategory, taskDescription, taskDate, taskUrgency);
+}
 
+function showDetails(taskCreatorName, taskCreatorEmail, taskCategory, taskDescription, taskDate, taskUrgency) {
+    return `
+    <div class="mainDetailContent">
+        <div class="detailContentStats"> name:<h2 class="padding">${taskCreatorName}</h2> </div>
+        <div class="detailContentStats">E-mail: <p class="padding">${taskCreatorEmail}</p></div> 
+        <div class="detailContentStats">Category: <p class="padding">${taskCategory}</p></div> 
+        <div class="detailContentStats">Date: <p class="padding">${taskDate}</p></div> 
+        <div class="detailContentStats">Description: <p class="padding">${taskDescription}</p></div> 
+        <div class="detailContentStats">Urgency: <p class="padding">${taskUrgency}</p></div> 
+        <img onclick="closeDetails()" class="closeBtnDetail" src="./images/close-window-32.png">
+    </div>
+`
 }
 
 
