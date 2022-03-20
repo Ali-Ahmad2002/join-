@@ -107,6 +107,9 @@ function openDetails(index) {
     content.innerHTML += showDetails(taskCreatorName, taskCreatorEmail, taskCategory, taskDescription, taskDate, taskUrgency);
 }
 
+
+
+
 function showDetails(taskCreatorName, taskCreatorEmail, taskCategory, taskDescription, taskDate, taskUrgency) {
     return `
     <div class="mainDetailContent">
@@ -148,10 +151,7 @@ async function goToBoard(i) {
     setTimeout(() => {
         document.getElementById('successPage').classList.add('d-none');
         refreshPage();
-    }, 1500);
-
-    
-
+    }, 1000);
 }
 
 
@@ -160,7 +160,8 @@ async function goToBoard(i) {
  * and from the backend server
  */
 async function deletTask(position) {
-    allTasks.splice(position, 1);
+    let toDelete = allTasks.indexOf(position);
+    allTasks.splice(toDelete, 1);
 
     let allTasksAsString = JSON.stringify(allTasks);
     await backend.setItem('allTasks', allTasksAsString);
