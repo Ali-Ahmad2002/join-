@@ -55,7 +55,7 @@ async function addTask() {
     setTimeout(() => {
         refreshPage()
 
-    }, 4000);
+    }, 1200);
 
     /**
      * function to change JSON tasks to string and save it to backend
